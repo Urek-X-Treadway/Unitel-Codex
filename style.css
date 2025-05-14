@@ -1,0 +1,36 @@
+body{
+    background-color: #121212;
+    color: darkgoldenrod;
+    text-align: center;
+
+
+}
+
+nav{
+    background-color: #121212;
+    color: darkgoldenrod;
+    text-align: center;
+    font-size: 22px;
+}
+
+#nav2 button{
+    background-color: #121212;
+    border: 1.5px solid darkgoldenrod;
+    border-radius: 5px;
+    color: darkgoldenrod;
+    width: 100px;
+    height: 30px;
+    font-size: 17px;
+
+}
+
+#nav2 button:hover{
+    background-color: darkgoldenrod;
+    border: 1.5px solid #121212;
+    border-radius: 5px;
+    color: #121212;
+    width: 100px;
+    height: 30px;
+    font-size: 17px;
+
+}
