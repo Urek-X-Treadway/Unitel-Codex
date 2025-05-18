@@ -35,3 +35,44 @@ nav{
     font-size: 17px;
 
 }
+
+
+
+/* this section is for the archives page */
+
+
+    h1 {
+      color: orange;
+    }
+
+    .archive-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .entry {
+      display: flex;
+      align-items: center;
+      padding: 0.4rem 0;
+    }
+
+    .date {
+      flex: 0 0 130px;
+    }
+
+    .dots {
+      flex: 1;
+      border-bottom: 1px dotted darkgoldenrod;
+      margin: 0 10px;
+    }
+
+    .title a {
+      color: darkgoldenrod;
+      text-decoration: none;
+    }
+
+    .title a:hover {
+      color: orange;
+    }
+
+    /* this section is for the archives page */
