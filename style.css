@@ -41,38 +41,44 @@ nav{
 /* this section is for the archives page */
 
 
-    h1 {
-      color: orange;
+    #archive_h1 h1 {
+        color: orange;
+        font-family: 'Times New Roman', Times, serif
+
+
+
     }
 
     .archive-list {
-      max-width: 800px;
-      margin: 0 auto;
+        max-width: 800px;
+        margin: 0 auto;
+        font-family: 'Times New Roman', Times, serif
+
     }
 
     .entry {
-      display: flex;
-      align-items: center;
-      padding: 0.4rem 0;
+        display: flex;
+        align-items: center;
+        padding: 0.4rem 0;
     }
 
     .date {
-      flex: 0 0 130px;
+        flex: 0 0 130px;
     }
 
     .dots {
-      flex: 1;
-      border-bottom: 1px dotted darkgoldenrod;
-      margin: 0 10px;
+        flex: 1;
+        border-bottom: 1px dotted darkgoldenrod;
+        margin: 0 10px;
     }
 
     .title a {
-      color: darkgoldenrod;
-      text-decoration: none;
+        color: darkgoldenrod;
+        text-decoration: none;
     }
 
     .title a:hover {
-      color: orange;
+        color: orange;
     }
 
     /* this section is for the archives page */
