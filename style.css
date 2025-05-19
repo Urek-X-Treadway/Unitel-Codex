@@ -2,6 +2,7 @@ body{
     background-color: #121212;
     color: darkgoldenrod;
     text-align: center;
+    font-family: 'Junicode','Times New Roman', Times, serif;
 
 
 }
@@ -11,7 +12,7 @@ nav{
     color: darkgoldenrod;
     text-align: center;
     font-size: 22px;
-    font-family: 'Times New Roman', Times, serif
+    font-family: 'Junicode','Times New Roman', Times, serif;
 }
 
 #nav2 button{
@@ -43,7 +44,7 @@ nav{
 
     #archive_h1 h1 {
         color: orange;
-        font-family: 'Times New Roman', Times, serif
+        font-family: 'Junicode','Times New Roman', Times, serif;
 
 
 
@@ -52,7 +53,7 @@ nav{
     .archive-list {
         max-width: 800px;
         margin: 0 auto;
-        font-family: 'Times New Roman', Times, serif
+        font-family: 'Junicode','Times New Roman', Times, serif;
 
     }
 
