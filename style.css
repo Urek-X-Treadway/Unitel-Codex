@@ -7,6 +7,13 @@ body{
 
 }
 
+@font-face {
+  font-family: 'Junicode';
+  src: url('./Fonts/Junicode/Junicode.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 nav{
     background-color: #121212;
     color: darkgoldenrod;
