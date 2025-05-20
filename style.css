@@ -52,6 +52,7 @@ nav{
     #archive_h1 h1 {
         color: orange;
         font-family: 'Junicode','Times New Roman', Times, serif;
+        font-size: 17px;
 
 
 
@@ -74,10 +75,20 @@ nav{
         flex: 0 0 130px;
     }
 
+    .date:hover {
+        filter: brightness(135%);
+    }
+
+
     .dots {
         flex: 1;
         border-bottom: 1px dotted darkgoldenrod;
         margin: 0 10px;
+    }
+
+    .dots:hover{
+        filter: brightness(135%);
+
     }
 
     .title a {
@@ -90,3 +101,123 @@ nav{
     }
 
     /* this section is for the archives page */
+
+
+    main {
+        flex: 1;
+        padding: 0.1rem;
+    }
+
+    pre {
+        background-color: var(--code-bg);
+        color: var(--text);
+        padding: 1em;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-family: monospace;
+        margin: 1.5em 0;
+        margin-right: 150px;
+        margin-left: 150px;
+
+    }
+
+    code {
+        font-family: 'Junicode';
+    }
+
+    /* HTML operator-style syntax highlighting */
+    .tag { color: var(--tag); }
+    .attr { color: var(--attr); }
+    .string { color: var(--string); }
+    .comment { color: var(--comment); font-style: italic; }
+
+
+    :root {
+      --bg: #121212;
+      --text: darkgoldenrod;
+      --sidebar-bg: #1a1a1a;
+      --accent: darkgoldenrod;
+      --code-bg: #1e1e1e;
+      --tag: orange;
+      --attr: lightblue;
+      --string: #98c379;
+      --comment: gray;
+    }
+
+
+    a{
+        text-decoration: none;
+        color: #121212;
+        background-color: darkgoldenrod;
+        border-radius: 7px;
+    }
+
+    a:hover{
+        color: darkgoldenrod;
+        text-decoration: none;
+        background-color: #121212;
+
+    }
+
+
+
+
+
+
+
+    /* this section is for step by step images */
+
+
+
+    .img_container{
+        display: flex;
+        justify-content: center;
+  
+    }
+
+    .the_step_img{
+        width: 120px;
+        height: 75px;
+        margin-right: 10px;
+    }
+
+
+
+    .popup-box {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 960px;
+        height: 555px;
+        background: #121212;
+        border: 2px solid darkgoldenrod;
+        z-index: 100;
+    }
+
+    .hover-area:hover .popup-box {
+        display: block;
+    }
+
+    .popup-box img{
+        width: 960px;
+        height: 555px;
+
+    }
+
+
+
+    /* this section is for step by step images */
+
+
+
+    #python_greeting{
+        color: #e3ba25;
+    }
+
+    #python_greeting span{
+        color: #d5882a;
+    }
+
+    
