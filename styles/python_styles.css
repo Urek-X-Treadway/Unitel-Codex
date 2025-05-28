@@ -3,6 +3,7 @@ body{
     color: #69b6e2;
     text-align: center;
     font-family: 'Junicode','Times New Roman', Times, serif;
+    height: 1500px;
 
 
 }
@@ -160,4 +161,19 @@ nav{
 
     #python_greeting span{
         color: #d5882a;
+    }
+
+
+    #next_button{
+        background-color: #69b6e2;
+        color: #121212;
+        border: 2px solid #121212;
+        width: 100px;
+    }
+
+    #next_button:hover{
+        background-color: #121212;
+        color: #69b6e2;
+        border: 2px solid #69b6e2;
+        width: 100px;
     }
