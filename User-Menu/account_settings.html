@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="../Images/favicon/UX.png" type="image/x-icon">
+        <link rel="stylesheet"  href="../style.css">
+        <title>Unitel-Codex</title>
+
+        <script>
+            function toggleMenu() {
+            const menu = document.getElementById("userMenu");
+            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+            }
+    </script>
+
+
+
+
+    
+    </head>
+    <body>
+
+        <h1>Unitel-Codex</h1>
+
+
+        <nav class="navbar">
+            <div class="nav-left">
+                <img src="Images/favicon/UX.png" alt="Site Logo" class="site-logo">
+            </div>
+
+            <div class="nav-center">
+                <a href="../"><button>Home</button></a>
+                <a href="../Python/python.html"><button>Python</button></a>
+                <a href="../Web-Dev/web_dev.html"><button>Web Dev</button></a>
+                <a href="../Linux/linux.html"><button>Linux</button></a>
+                <a href="../Archives/archives.html"><button>Archives</button></a>
+                <a href="../About/about.html"><button>About</button></a>
+
+            </div>
+
+            <div class="nav-right">
+                <input type="text" placeholder="Search..." class="search-bar">
+                <img src="user-icon.png" alt="User Icon" class="user-icon" onclick="toggleMenu()">
+                <div class="user-menu" id="userMenu">
+                    <a href="/User-Menu/profile.html">Profile</a>
+                    <a href="/User-Menu/account_settings.html">Account Settings</a>
+                    <a href="#">Sign In</a>
+                    <a href="#">Log Out</a>
+                </div>
+            </div>
+        </nav>
+
+
+
+
+
+    </body>
+</html>
