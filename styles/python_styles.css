@@ -8,6 +8,7 @@ body{
 
 }
 
+
 @font-face {
   font-family: 'Junicode';
   src: url('./Fonts/Junicode/Junicode.ttf') format('truetype');
@@ -79,33 +80,12 @@ nav{
       --bg: #121212;
       --text: #e5ab59;
       --sidebar-bg: #1a1a1a;
-      --accent: ##69b6e2;
+      --accent: #69b6e2;
       --code-bg: #1e1e1e;
       --tag: #69b6e2;
-      --attr: lightblue;
       --string: #98c379;
       --comment: gray;
     }
-
-
-    a{
-        text-decoration: none;
-        color: #121212;
-        background-color: #69b6e2;
-        border-radius: 7px;
-    }
-
-    a:hover{
-        color: #69b6e2;
-        text-decoration: none;
-        background-color: #121212;
-
-    }
-
-
-
-
-
 
 
     /* this section is for step by step images */
