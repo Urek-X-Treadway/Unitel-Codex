@@ -7,6 +7,14 @@
         <link rel="stylesheet"  href="style.css">
         <title>Unitel-Codex</title>
 
+        <script>
+            function toggleMenu() {
+            const menu = document.getElementById("userMenu");
+            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+            }
+        </script>
+
+
 
 
 
@@ -24,11 +32,11 @@
 
             <div class="nav-center">
                 <a href="../"><button>Home</button></a>
-                <a href="Python/"><button>Python</button></a>
-                <a href="Web-Dev/"><button>Web Dev</button></a>
-                <a href="Linux/"><button>Linux</button></a>
-                <a href="Archives/"><button>Archives</button></a>
-                <a href="About/"><button>About</button></a>
+                <a href="Python/python.html"><button>Python</button></a>
+                <a href="Web-Dev/web_dev.html"><button>Web Dev</button></a>
+                <a href="Linux/linux.html"><button>Linux</button></a>
+                <a href="Archives/archives.html"><button>Archives</button></a>
+                <a href="About/about.html"><button>About</button></a>
 
             </div>
 
@@ -36,8 +44,8 @@
                 <input type="text" placeholder="Search..." class="search-bar">
                 <img src="user-icon.png" alt="User Icon" class="user-icon" onclick="toggleMenu()">
                 <div class="user-menu" id="userMenu">
-                    <a href="#">Profile</a>
-                    <a href="#">Account Settings</a>
+                    <a href="/User-Menu/profile.html">Profile</a>
+                    <a href="/User-Menu/account_settings.html">Account Settings</a>
                     <a href="#">Sign In</a>
                     <a href="#">Log Out</a>
                 </div>
