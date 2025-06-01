@@ -1,28 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../Images/favicon/UX.png" type="image/x-icon">
-    <link rel="stylesheet"  href="style.css">
-    <title>Unitel-Codex</title>
-</head>
-<body>
-    <nav>
-        <h1>Unitel-Library</h1>
-    </nav>
-    <nav id="nav2">
-        <a href="../"><button>Home</button></a>
-        <a href="Python/"><button>Python</button></a>
-        <a href="Web-Dev/"><button>Web Dev</button></a>
-        <a href="Linux/"><button>Linux</button></a>
-        <a href="Archives/"><button>Archives</button></a>
-    </nav>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="../Images/favicon/UX.png" type="image/x-icon">
+        <link rel="stylesheet"  href="style.css">
+        <title>Unitel-Codex</title>
+
+
+
+
+    
+    </head>
+    <body>
+
+        <h1>Unitel-Codex</h1>
+
+
+        <nav class="navbar">
+            <div class="nav-left">
+                <img src="Images/favicon/UX.png" alt="Site Logo" class="site-logo">
+            </div>
+
+            <div class="nav-center">
+                <a href="../"><button>Home</button></a>
+                <a href="Python/"><button>Python</button></a>
+                <a href="Web-Dev/"><button>Web Dev</button></a>
+                <a href="Linux/"><button>Linux</button></a>
+                <a href="Archives/"><button>Archives</button></a>
+                <a href="About/"><button>About</button></a>
+
+            </div>
+
+            <div class="nav-right">
+                <input type="text" placeholder="Search..." class="search-bar">
+                <img src="user-icon.png" alt="User Icon" class="user-icon" onclick="toggleMenu()">
+                <div class="user-menu" id="userMenu">
+                    <a href="#">Profile</a>
+                    <a href="#">Account Settings</a>
+                    <a href="#">Sign In</a>
+                    <a href="#">Log Out</a>
+                </div>
+            </div>
+        </nav>
 
 
 
 
 
-
-</body>
+    </body>
 </html>
