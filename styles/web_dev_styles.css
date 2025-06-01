@@ -1,0 +1,159 @@
+body{
+    background-color: #121212;
+    color: palevioletred;
+    text-align: center;
+    font-family: 'Junicode','Times New Roman', Times, serif;
+    height: 1500px;
+
+
+}
+
+
+@font-face {
+  font-family: 'Junicode';
+  src: url('./Fonts/Junicode/Junicode.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+nav{
+    background-color: #121212;
+    color: palevioletred;
+    text-align: center;
+    font-size: 22px;
+    font-family: 'Junicode','Times New Roman', Times, serif;
+}
+
+#nav2 button{
+    background-color: #121212;
+    border: 1.5px solid #69b6e2;
+    border-radius: 5px;
+    color: #69b6e2;
+    width: 100px;
+    height: 30px;
+    font-size: 17px;
+
+}
+
+#nav2 button:hover{
+    background-color: #69b6e2;
+    border: 1.5px solid #121212;
+    border-radius: 5px;
+    color: #121212;
+    width: 100px;
+    height: 30px;
+    font-size: 17px;
+
+}
+
+
+    main {
+        flex: 1;
+        padding: 0.1rem;
+    }
+
+    pre {
+        background-color: var(--code-bg);
+        color: var(--text);
+        padding: 1em;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-family: monospace;
+        margin: 1.5em 0;
+        margin-right: 150px;
+        margin-left: 150px;
+
+    }
+
+    code {
+        font-family: 'Junicode';
+    }
+
+    /* HTML operator-style syntax highlighting */
+    .tag { color: var(--tag); }
+    .attr { color: var(--attr); }
+    .string { color: var(--string); }
+    .comment { color: var(--comment); font-style: italic; }
+
+
+    :root {
+      --bg: #121212;
+      --text: #e5ab59;
+      --sidebar-bg: #1a1a1a;
+      --accent: #69b6e2;
+      --code-bg: #1e1e1e;
+      --tag: #69b6e2;
+      --string: #98c379;
+      --comment: gray;
+    }
+
+
+    /* this section is for step by step images */
+
+
+
+    .img_container{
+        display: flex;
+        justify-content: center;
+  
+    }
+
+    .the_step_img{
+        width: 120px;
+        height: 75px;
+        margin-right: 10px;
+    }
+
+
+
+    .popup-box {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 960px;
+        height: 555px;
+        background: #121212;
+        border: 2px solid #69b6e2;
+        z-index: 100;
+    }
+
+    .hover-area:hover .popup-box {
+        display: block;
+    }
+
+    .popup-box img{
+        width: 960px;
+        height: 555px;
+
+    }
+
+
+
+    /* this section is for step by step images */
+
+
+
+    #python_greeting{
+        color: #69b6e2;
+    }
+
+    #python_greeting span{
+        color: #d5882a;
+    }
+
+
+    #next_button{
+        background-color: #69b6e2;
+        color: #121212;
+        border: 2px solid #121212;
+        width: 100px;
+    }
+
+    #next_button:hover{
+        background-color: #121212;
+        color: #69b6e2;
+        border: 2px solid #69b6e2;
+        width: 100px;
+    }
