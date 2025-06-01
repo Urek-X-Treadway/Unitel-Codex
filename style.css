@@ -4,25 +4,38 @@ body{
     text-align: center;
     font-family: 'Junicode','Times New Roman', Times, serif;
 
-
 }
 
-@font-face {
-  font-family: 'Junicode';
-  src: url('./Fonts/Junicode/Junicode.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 
-nav{
+/*##################################*/
+/*##################################*/
+/*##################################*/
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
     background-color: #121212;
+    position: relative;
     color: darkgoldenrod;
-    text-align: center;
-    font-size: 22px;
-    font-family: 'Junicode','Times New Roman', Times, serif;
+    border-bottom: 2px solid darkgoldenrod;
 }
 
-#nav2 button{
+.nav-left .site-logo {
+  height: 40px;
+  
+}
+
+.nav-center {
+  display: flex;
+  gap: 15px;
+  
+}
+
+.nav-center button {
+    cursor: pointer;
     background-color: #121212;
     border: 1.5px solid darkgoldenrod;
     border-radius: 5px;
@@ -30,10 +43,12 @@ nav{
     width: 100px;
     height: 30px;
     font-size: 17px;
+    border-bottom: 1.5px solid darkgoldenrod;
 
 }
 
-#nav2 button:hover{
+.nav-center button:hover {
+    cursor: pointer;
     background-color: darkgoldenrod;
     border: 1.5px solid #121212;
     border-radius: 5px;
@@ -42,6 +57,62 @@ nav{
     height: 30px;
     font-size: 17px;
 
+}
+
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.search-bar {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.user-icon {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.user-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.user-menu a {
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.user-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+/*##################################*/
+/*##################################*/
+/*##################################*/
+
+
+
+
+
+@font-face {
+  font-family: 'Junicode';
+  src: url('./Fonts/Junicode/Junicode.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 
@@ -143,25 +214,6 @@ nav{
       --string: #98c379;
       --comment: gray;
     }
-
-
-    a{
-        text-decoration: none;
-        color: #121212;
-        background-color: darkgoldenrod;
-        border-radius: 7px;
-    }
-
-    a:hover{
-        color: darkgoldenrod;
-        text-decoration: none;
-        background-color: #121212;
-
-    }
-
-
-
-
 
 
 
