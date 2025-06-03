@@ -6,6 +6,118 @@ body{
 
 }
 
+.quick_tab {
+    background-color: #121212;
+
+}
+
+
+.quick_tab button {
+    background-color: darkgoldenrod;
+    border: 2px solid black;
+    border-radius: 3px;
+    color: #121212;
+    width: 100px;
+}
+
+.quick_tab button:hover {
+    background-color: #121212;
+    border: 2px solid darkgoldenrod;
+    border-radius: 3px;
+    color: darkgoldenrod;
+    width: 100px;
+}
+
+
+#div1 img {
+    width: 175px;
+    height: 98.5px;
+    /*border: 2px solid;*/
+    margin-left: 25px;
+}
+
+#div1 {
+    /*border: 2px solid;*/
+    display: inline-flex;
+
+}
+
+#div2 img {
+    width: 400px;
+    height: 320px;
+    /*border: 2px solid;*/
+    margin-left: 25px;
+}
+
+
+
+
+
+
+
+
+
+/* quick tab hide/show */
+
+
+  
+
+
+
+
+    /* Hide all content sections initially */
+
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    label {
+      padding: 10px 20px;
+      background: darkgoldenrod;
+      color: #121212;
+      margin-right: 5px;
+      cursor: pointer;
+      border-radius: 5px 5px 0 0;
+    }
+
+    /* Active tab label */
+    #python_tab:checked + label[for="python_tab"],
+    #webdev_tab:checked + label[for="webdev_tab"],
+    #linux_tab:checked + label[for="linux_tab"] {
+      background: #121212;
+      color: darkgoldenrod;
+      border: 2px solid rgb(255, 255, 255);
+      border-bottom: 2px solid darkgoldenrod;
+    }
+
+    section {
+      display: none;
+      padding: 20px;
+      border: 1px solid #ccc;
+      margin-top: -1px;
+    }
+
+    #python_tab:checked ~ #python_section,
+    #webdev_tab:checked ~ #webdev_section,
+    #linux_tab:checked ~ #linux_section {
+      display: block;
+    }
+
+
+
+
+
+/* quick tab hide/show */
+
+
+
+
+
+
+
+
+
 
 /*##################################*/
 /*##################################*/
@@ -272,4 +384,13 @@ body{
         color: #d5882a;
     }
 
+
+
+
+
+
+    footer {
+        border-top: 2px solid;
+        margin-top: 35px;
+    }
     
