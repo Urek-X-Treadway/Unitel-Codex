@@ -12,7 +12,8 @@
     const menu = document.getElementById("userMenu");
     menu.style.display = menu.style.display === "flex" ? "none" : "flex";
     }
-  </script>
+    </script>
+
     </head>
     <body>
         <nav>
@@ -46,117 +47,149 @@
             </div>
         </nav>
         
-
+        <h2 id="python_greeting">print(<span>"Welcome")</span></h2>
 
         <p>This page is about one of the most known programming language</p>
+        <p>This website has one purpose is to share my knowledge of Python.</p>
 
 
-        <h2>Note: remove this: each of pages must have their own colors</h2>
+
 
 
         <main>
-        <h2 id="python_greeting">print(<span>"Welcome")</span></h2>
-        <p>This website has one purpose is to share my knowledge of Python.</p>
 
-        <h2>🛠️ Downloading Python3</h2>
+            <h2>🛠️ Downloading Python3</h2>
 
-        <p>Before we begin anything, how about we download python3 as it is the latest version of python.</p>
+            <p>Before we begin anything, how about we download python3 as it is the latest version of python.</p>
+
+            <input type="radio" id="Window_tab" name="tab_group" checked>
+            <label for="Window_tab">Window</label>
+
+            <input type="radio" id="linux_tab" name="tab_group">
+            <label for="linux_tab">Linux</label>
+
+            <input type="radio" id="macos_tab" name="tab_group">
+            <label for="macos_tab">MacOS</label>
+
+
+
+
+
+
+            <section id="window_download_section">
+
+                <h3>Downloading Python3 on window</h3>
+            <p>You can either go to the official website (<a target="_blank" href="https://www.python.org/downloads/">Python3</a>)</p>
     
+            <p>Hover on each image to see the steps of downloading it on windows</p>
     
-            
-        <h3>Downloading Python3 on window</h3>
-        <p>You can either go to the official website (<a target="_blank" href="https://www.python.org/downloads/">Python3</a>)</p>
-    
-        <p>Hover on each image to see the steps of downloading it on windows</p>
-    
-        <div class="img_container">
+            <div class="img_container">
 
             
-            <div class="hover-area">
+                <div class="hover-area">
 
             
-                <img class="the_step_img" src="../Python/Images/Window_python_Install/python_install_1.PNG" alt="step one of installing python on window">
-                <p>Step -1-</p>    
-                <div class="popup-box">
-                <img src="../Python/Images/Window_python_Install/python_install_1.PNG">
+                    <img class="the_step_img" src="../Python/Images/Window_python_Install/python_install_1.PNG" alt="step one of installing python on window">
+                    <p>Step -1-</p>    
+                    <div class="popup-box">
+                    <img src="../Python/Images/Window_python_Install/python_install_1.PNG">
+                    </div>
+
                 </div>
 
-            </div>
-
-            <div class="hover-area">
+                <div class="hover-area">
 
             
-                <img class="the_step_img" src="../Python/Images/Window_python_Install/python_install_1.PNG" alt="step one of installing python on window">
-                <p>Step -2-</p>   
-                <div class="popup-box">
-                <img src="../Python/Images/Window_python_Install/python_install_1.PNG">
+                    <img class="the_step_img" src="../Python/Images/Window_python_Install/python_install_1.PNG" alt="step one of installing python on window">
+                    <p>Step -2-</p>   
+                    <div class="popup-box">
+                    <img src="../Python/Images/Window_python_Install/python_install_1.PNG">
+                    </div>
+
                 </div>
 
-            </div>
-
-            <div class="hover-area">
+                <div class="hover-area">
 
             
-                <img class="the_step_img" src="../Python/Images/Window_python_Install/python_install_1.PNG" alt="step one of installing python on window">
-                <p>Step -3-</p>    
-                <div class="popup-box">
-                <img src="../Python/Images/Window_python_Install/python_install_1.PNG">
+                    <img class="the_step_img" src="../Python/Images/Window_python_Install/python_install_1.PNG" alt="step one of installing python on window">
+                    <p>Step -3-</p>    
+                    <div class="popup-box">
+                    <img src="../Python/Images/Window_python_Install/python_install_1.PNG">
+                    </div>
+
                 </div>
 
-            </div>
+                <div class="hover-area">
 
-            <div class="hover-area">
+                    <img class="the_step_img" src="../Python/Images/Window_python_Install/python_install_1.PNG" alt="step one of installing python on window">
+                    <p>Step -4-</p>
 
-                <img class="the_step_img" src="../Python/Images/Window_python_Install/python_install_1.PNG" alt="step one of installing python on window">
-                <p>Step -4-</p>
+                    <div class="popup-box">
+                    <img src="../Python/Images/Window_python_Install/python_install_1.PNG">
+                    </div>
 
-                <div class="popup-box">
-                <img src="../Python/Images/Window_python_Install/python_install_1.PNG">
                 </div>
 
-            </div>
-
-            <div class="hover-area">
+                <div class="hover-area">
 
             
-                <img class="the_step_img" src="../Python/Images/Window_python_Install/python_install_1.PNG" alt="step one of installing python on window">
-                <p>Step -5-</p>  
+                    <img class="the_step_img" src="../Python/Images/Window_python_Install/python_install_1.PNG" alt="step one of installing python on window">
+                    <p>Step -5-</p>  
 
-                <div class="popup-box">
-                <img src="../Python/Images/Window_python_Install/python_install_1.PNG">
+                    <div class="popup-box">
+                    <img src="../Python/Images/Window_python_Install/python_install_1.PNG">
+                    </div>
+
                 </div>
-
-            </div>
 
         
-        </div>
+            </div>
 
+            <h2>On Window</h2>
+            <h3>window 11 = using winget on terimnal</h3>
 
-        <p>Or save yourself the trouble and just download it using the Terminal</p>
+            <pre><code>winget install --id Python.Python.3</code></pre>
+
+            </section>
+
+            <section id="linux_download_section">
+
+                <p>Or save yourself the trouble and just download it using the Terminal</p>
+
+    
 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-        <h2>On linux</h2>
-        <h3>ubunty = using apt</h3>
+            <h2>On linux</h2>
+            <h3>ubunty = using apt</h3>
         
     
-        <pre><code>sudo apt install python3</code></pre>
+            <pre><code>sudo apt install python3</code></pre>
+                
+            </section>
+
+            <section id="macos_download_section">
+                
+            </section>
 
 
 
-        <h2>On Window</h2>
-        <h3>window 11 = using winget on terimnal</h3>
 
-        <pre><code>winget install --id Python.Python.3</code></pre>
+
+
+            
+
+    
+    
+            
+            
+
+
+            
+
+
+
+            
 
     
         </main>
