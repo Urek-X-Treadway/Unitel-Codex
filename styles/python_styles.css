@@ -21,6 +21,67 @@ a:active {
     color: #f15d64;
 }
 
+/*##################################*/
+/*##################################*/
+/*##################################*/
+/*##################################*/
+/*##################################*/
+
+
+input[type="radio"] {
+      display: none;
+    }
+
+label {
+      padding: 10px 20px;
+      background: darkgoldenrod;
+      color: #121212;
+      margin-right: 5px;
+      cursor: pointer;
+      border-radius: 5px 5px 0 0;
+    }
+
+
+#Window_tab:checked + label[for="Window_tab"],
+#linux_tab:checked + label[for="linux_tab"],
+#macos_tab:checked + label[for="macos_tab"] {
+        background: #121212;
+        color: darkgoldenrod;
+        border: 2px solid rgb(255, 255, 255);
+        border-bottom: 2px solid darkgoldenrod;
+}
+
+
+section {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: -1px;
+}
+
+
+
+#Window_tab:checked ~ #window_download_section,
+#linux_tab:checked ~ #linux_download_section,
+#macos_tab:checked ~ #macos_download_section {
+    display: block;
+}
+
+
+
+
+
+
+/*##################################*/
+/*##################################*/
+/*##################################*/
+/*##################################*/
+/*##################################*/
+
+
+
+
+
 
 
 /*##################################*/
@@ -30,7 +91,7 @@ a:active {
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 10px 20px;
     background-color: #121212;
@@ -47,6 +108,10 @@ a:active {
 .nav-center {
   display: flex;
   gap: 15px;
+
+  margin-right: 25px;
+  margin-left: 25px;
+  
   
 }
 
