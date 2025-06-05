@@ -136,7 +136,13 @@ body{
 }
 
 .nav-left .site-logo {
-  height: 40px;
+    height: 80px;
+    width: 80px;
+    border-bottom: 2px solid darkgoldenrod;
+    border-left: 2px solid darkgoldenrod;
+    
+
+
   
 }
 
@@ -192,6 +198,8 @@ body{
   height: 30px;
   width: 30px;
   cursor: pointer;
+  border-bottom: 2px double darkgoldenrod;
+  border-right: 2px double darkgoldenrod;
 }
 
 .user-menu {
