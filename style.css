@@ -141,6 +141,9 @@ body{
     border-bottom: 2px solid darkgoldenrod;
     border-left: 2px solid darkgoldenrod;
     
+    border-right: 2px solid white;
+    border-top: 2px solid white;
+    
 
 
   
@@ -157,29 +160,53 @@ body{
 }
 
 .nav-center button {
-    cursor: pointer;
     background-color: #121212;
-    border: 1.5px solid darkgoldenrod;
-    border-radius: 5px;
+    padding: 10px 20px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    border: 2px solid #ffffff;
+    border-bottom: 2px solid darkgoldenrod;
     color: darkgoldenrod;
-    width: 100px;
-    height: 30px;
     font-size: 17px;
-    border-bottom: 1.5px solid darkgoldenrod;
+
 
 }
 
 .nav-center button:hover {
-    cursor: pointer;
     background-color: darkgoldenrod;
-    border: 1.5px solid #121212;
-    border-radius: 5px;
+    padding: 10px 20px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    border: 2px solid #121212;
+    border-bottom: 2px solid #ffffff;
     color: #121212;
-    width: 100px;
-    height: 30px;
     font-size: 17px;
 
 }
+
+
+.nav-center #selected_button {
+    padding: 10px 20px;
+    background: darkgoldenrod;
+    color: #121212;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+
+}
+
+
+.nav-center #selected_button:hover {
+    background: #121212;
+    color: darkgoldenrod;
+    border: 2px solid rgb(255, 255, 255);
+    border-bottom: 2px solid darkgoldenrod;
+
+}
+
+
 
 
 .nav-right {
@@ -200,6 +227,9 @@ body{
   cursor: pointer;
   border-bottom: 2px double darkgoldenrod;
   border-right: 2px double darkgoldenrod;
+
+  border-top: 2px double white;
+  border-left: 2px double white;
 }
 
 .user-menu {
@@ -239,63 +269,6 @@ body{
   font-style: normal;
 }
 
-
-
-/* this section is for the archives page */
-
-
-    #archive_h1 h1 {
-        color: orange;
-        font-family: 'Junicode','Times New Roman', Times, serif;
-        font-size: 17px;
-
-
-
-    }
-
-    .archive-list {
-        max-width: 800px;
-        margin: 0 auto;
-        font-family: 'Junicode','Times New Roman', Times, serif;
-
-    }
-
-    .entry {
-        display: flex;
-        align-items: center;
-        padding: 0.4rem 0;
-    }
-
-    .date {
-        flex: 0 0 130px;
-    }
-
-    .date:hover {
-        filter: brightness(135%);
-    }
-
-
-    .dots {
-        flex: 1;
-        border-bottom: 1px dotted darkgoldenrod;
-        margin: 0 10px;
-    }
-
-    .dots:hover{
-        filter: brightness(135%);
-
-    }
-
-    .title a {
-        color: darkgoldenrod;
-        text-decoration: none;
-    }
-
-    .title a:hover {
-        color: orange;
-    }
-
-    /* this section is for the archives page */
 
 
     main {
@@ -398,7 +371,7 @@ body{
 
 
 
-
+/*############## Footer ##############*/
 
 
     footer {
@@ -406,3 +379,5 @@ body{
         margin-top: 35px;
     }
     
+
+/*############## Footer ##############*/
