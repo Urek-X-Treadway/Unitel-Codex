@@ -143,6 +143,39 @@ body{
 /*##################################*/
 
 
+
+/*########## Bread Crumb style #################*/
+
+.breadcrumb {
+    border-radius: 5px 5px 0 0;
+    width: 200px;
+    margin: auto;
+
+}
+
+
+.breadcrumb span {
+    color: white;
+}
+
+.breadcrumb span:nth-of-type(2) {
+    color: red;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #9675f9;
+}
+
+
+.breadcrumb a::before {
+    content: "🏛️";
+}
+
+
+/*##################################*/
+
+
 /*############ Link colors #################*/
 
 
