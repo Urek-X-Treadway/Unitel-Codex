@@ -13,10 +13,26 @@
             menu.style.display = menu.style.display === "flex" ? "none" : "flex";
             }
     </script>
+
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const correctCode = "1234"; // You can change this to your secret code
+      const userCode = prompt("Enter the access code:");
+
+      if (userCode !== correctCode) {
+        alert("Incorrect code. You will be redirected.");
+        window.location.href = "access-denied.html"; // A page to show if wrong code
+      }
+        });
+    </script>
     
     
 </head>
 <body>
+
+
+
     <nav>
         <h1>About</h1>
 
