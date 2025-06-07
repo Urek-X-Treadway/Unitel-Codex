@@ -1,0 +1,401 @@
+body{
+    background-color: #121212;
+    color: darkseagreen;
+    text-align: center;
+    font-family: 'Junicode','Times New Roman', Times, serif;
+    height: 1500px;
+
+
+}
+
+
+/*############ Nav Bar ################*/
+
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #121212;
+    position: relative;
+    color: darkgoldenrod;
+    border-bottom: 2px solid darkgoldenrod;
+}
+
+.nav-left .site-logo {
+    height: 80px;
+    width: 80px;
+    border-bottom: 2px solid darkgoldenrod;
+    border-left: 2px solid darkgoldenrod;
+    
+    border-right: 2px solid white;
+    border-top: 2px solid white;
+    
+
+
+  
+}
+
+.nav-center {
+  display: flex;
+  gap: 15px;
+
+  margin-right: 25px;
+  margin-left: 25px;
+  
+  
+}
+
+.nav-center button {
+    background-color: #121212;
+    padding: 10px 20px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    border: 2px solid #ffffff;
+    border-bottom: 2px solid darkgoldenrod;
+    color: darkgoldenrod;
+    font-size: 17px;
+
+
+}
+
+.nav-center button:hover {
+    background-color: darkgoldenrod;
+    padding: 10px 20px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    border: 2px solid #121212;
+    border-bottom: 2px solid #ffffff;
+    color: #121212;
+    font-size: 17px;
+
+}
+
+
+.nav-center #selected_button {
+    padding: 10px 20px;
+    background: #69b6e2;
+    color: #121212;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+
+}
+
+
+.nav-center #selected_button:hover {
+    background: #121212;
+    color: darkgoldenrod;
+    border: 2px solid rgb(255, 255, 255);
+    border-bottom: 2px solid darkgoldenrod;
+
+}
+
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.search-bar {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.user-icon {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  border-bottom: 2px double darkgoldenrod;
+  border-right: 2px double darkgoldenrod;
+
+  border-top: 2px double white;
+  border-left: 2px double white;
+}
+
+.user-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.user-menu a {
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.user-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+/*##################################*/
+
+
+
+
+
+/*########## Bread Crumb style #################*/
+
+.breadcrumb {
+    border-radius: 5px 5px 0 0;
+    width: 200px;
+    margin: auto;
+
+}
+
+
+.breadcrumb span {
+    color: white;
+}
+
+.breadcrumb span:nth-of-type(2) {
+    color: red;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #9675f9;
+}
+
+
+.breadcrumb a::before {
+    content: "🏛️";
+}
+
+
+/*##################################*/
+
+
+
+
+
+
+
+
+/*############ Link colors #################*/
+
+
+a {
+    color: #69b6e2;
+}
+
+a:hover {
+    color: #9675f9;
+}
+
+a:active {
+    color: #f15d64;
+}
+
+/*############ Link colors #################*/
+
+
+
+/*########### Tab  #############*/
+
+
+input[type="radio"] {
+      display: none;
+    }
+
+label {
+      padding: 10px 20px;
+      background: darkgoldenrod;
+      color: #121212;
+      margin-right: 5px;
+      cursor: pointer;
+      border-radius: 5px 5px 0 0;
+    }
+
+
+#Window_tab:checked + label[for="Window_tab"],
+#linux_tab:checked + label[for="linux_tab"],
+#macos_tab:checked + label[for="macos_tab"] {
+        background: #121212;
+        color: darkgoldenrod;
+        border: 2px solid rgb(255, 255, 255);
+        border-bottom: 2px solid darkgoldenrod;
+}
+
+
+section {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: -1px;
+}
+
+
+
+#Window_tab:checked ~ #window_download_section,
+#linux_tab:checked ~ #linux_download_section,
+#macos_tab:checked ~ #macos_download_section {
+    display: block;
+}
+
+
+/*##################################*/
+
+
+
+/*########### Font Family ##############*/
+
+@font-face {
+  font-family: 'Junicode';
+  src: url('./Fonts/Junicode/Junicode.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*##################################*/
+
+
+
+
+/*######### Style for the Code space #################*/
+
+    main {
+        flex: 1;
+        padding: 0.1rem;
+    }
+
+    pre {
+        background-color: var(--code-bg);
+        color: var(--text);
+        padding: 1em;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-family: monospace;
+        margin: 1.5em 0;
+        margin-right: 150px;
+        margin-left: 150px;
+
+    }
+
+    code {
+        font-family: 'Junicode';
+    }
+
+    /* HTML operator-style syntax highlighting */
+    .tag { color: var(--tag); }
+    .attr { color: var(--attr); }
+    .string { color: var(--string); }
+    .comment { color: var(--comment); font-style: italic; }
+
+
+    :root {
+      --bg: #121212;
+      --text: #e5ab59;
+      --sidebar-bg: #1a1a1a;
+      --accent: #69b6e2;
+      --code-bg: #1e1e1e;
+      --tag: #69b6e2;
+      --string: #98c379;
+      --comment: gray;
+    }
+
+/*##################################*/
+
+
+
+
+/*############# Pop up images ###############*/
+
+
+    /* this section is for step by step images */
+    .img_container{
+        display: flex;
+        justify-content: center;
+  
+    }
+
+    .the_step_img{
+        width: 120px;
+        height: 75px;
+        margin-right: 10px;
+    }
+
+
+
+    .popup-box {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 960px;
+        height: 555px;
+        background: #121212;
+        border: 2px solid #69b6e2;
+        z-index: 100;
+    }
+
+    .hover-area:hover .popup-box {
+        display: block;
+    }
+
+    .popup-box img{
+        width: 960px;
+        height: 555px;
+
+    }
+
+/*##################################*/
+
+
+
+/*############ This is for the print welcome heading ###############*/
+    #python_greeting{
+        color: #69b6e2;
+    }
+
+    #python_greeting span{
+        color: #d5882a;
+    }
+
+/*##################################*/
+
+
+
+
+/*############## Next Button style ###############*/
+    #next_button{
+        background-color: #69b6e2;
+        color: #121212;
+        border: 2px solid #121212;
+        width: 100px;
+    }
+
+    #next_button:hover{
+        background-color: #121212;
+        color: #69b6e2;
+        border: 2px solid #69b6e2;
+        width: 100px;
+    }
+
+/*##################################*/
+
+
+
+    /*############## Footer ##############*/
+
+
+    footer {
+        border-top: 2px solid;
+        margin-top: 35px;
+    }
+    
+
+/*############## Footer ##############*/
