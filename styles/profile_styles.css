@@ -1,0 +1,339 @@
+body{
+    background-color: #121212;
+    color: darksalmon;
+    text-align: center;
+    font-family: 'Junicode','Times New Roman', Times, serif;
+    height: 1500px;
+
+
+}
+
+
+/*############ Nav Bar ################*/
+
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #121212;
+    position: relative;
+    color: darkgoldenrod;
+    border-bottom: 2px solid darkgoldenrod;
+}
+
+.nav-left .site-logo {
+    height: 80px;
+    width: 80px;
+    border-bottom: 2px solid darkgoldenrod;
+    border-left: 2px solid darkgoldenrod;
+    
+    border-right: 2px solid white;
+    border-top: 2px solid white;
+    
+
+
+  
+}
+
+.nav-center {
+  display: flex;
+  gap: 15px;
+
+  margin-right: 25px;
+  margin-left: 25px;
+  
+  
+}
+
+.nav-center button {
+    background-color: #121212;
+    padding: 10px 20px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    border: 2px solid #ffffff;
+    border-bottom: 2px solid darkgoldenrod;
+    color: darkgoldenrod;
+    font-size: 17px;
+
+
+}
+
+.nav-center button:hover {
+    background-color: darkgoldenrod;
+    padding: 10px 20px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    border: 2px solid #121212;
+    border-bottom: 2px solid #ffffff;
+    color: #121212;
+    font-size: 17px;
+
+}
+
+
+.nav-center #selected_button {
+    padding: 10px 20px;
+    background: #69b6e2;
+    color: #121212;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+
+}
+
+
+.nav-center #selected_button:hover {
+    background: #121212;
+    color: darkgoldenrod;
+    border: 2px solid rgb(255, 255, 255);
+    border-bottom: 2px solid darkgoldenrod;
+
+}
+
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.search-bar {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.user-icon {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  border-bottom: 2px double darkgoldenrod;
+  border-right: 2px double darkgoldenrod;
+
+  border-top: 2px double white;
+  border-left: 2px double white;
+}
+
+.user-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.user-menu a {
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.user-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+/*##################################*/
+
+
+
+
+
+/*########## Bread Crumb style #################*/
+
+.breadcrumb {
+    border-radius: 5px 5px 0 0;
+    width: 200px;
+    margin: auto;
+
+}
+
+
+.breadcrumb span {
+    color: white;
+}
+
+.breadcrumb span:nth-of-type(2) {
+    color: red;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #9675f9;
+}
+
+
+.breadcrumb a::before {
+    content: "🏛️";
+}
+
+
+/*##################################*/
+
+
+
+
+
+
+
+
+/*############ Link colors #################*/
+
+
+a {
+    color: #69b6e2;
+}
+
+a:hover {
+    color: #9675f9;
+}
+
+a:active {
+    color: #f15d64;
+}
+
+/*############ Link colors #################*/
+
+
+
+/*########### Tab  #############*/
+
+
+input[type="radio"] {
+      display: none;
+    }
+
+label {
+      padding: 10px 20px;
+      background: darkgoldenrod;
+      color: #121212;
+      margin-right: 5px;
+      cursor: pointer;
+      border-radius: 5px 5px 0 0;
+    }
+
+
+#account_setting_tab:checked + label[for="account_setting_tab"],
+#site_setting_tab:checked + label[for="site_setting_tab"] {
+        background: #121212;
+        color: darkgoldenrod;
+        border: 2px solid rgb(255, 255, 255);
+        border-bottom: 2px solid darkgoldenrod;
+}
+
+
+section {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: -1px;
+}
+
+
+
+#account_setting_tab:checked ~ #account_setting_section,
+#site_setting_tab:checked ~ #site_setting_section {
+    display: block;
+}
+
+
+/*##################################*/
+
+
+
+/*########### Font Family ##############*/
+
+@font-face {
+  font-family: 'Junicode';
+  src: url('./Fonts/Junicode/Junicode.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*##################################*/
+
+
+
+/*############ This is for the print welcome heading ###############*/
+    #python_greeting{
+        color: #69b6e2;
+    }
+
+    #python_greeting span{
+        color: #d5882a;
+    }
+
+/*##################################*/
+
+hr {
+    border: 2px solid darkgrey;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+
+.profile_container {
+    border: 2px solid;
+    
+
+}
+
+
+
+
+
+
+
+.profile_photo {
+    border: 2px solid;
+
+}
+
+
+.profile_photo {
+    width: 150px;
+    margin: 20px auto;
+    text-align: center;
+}
+.profile_photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #333;
+}
+.change-photo-btn {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: not-allowed; /* indicates no action without JS */
+}
+
+
+
+
+
+
+
+
+
+    /*############## Footer ##############*/
+
+
+    footer {
+        border-top: 2px solid;
+        margin-top: 35px;
+    }
+    
+
+/*############## Footer ##############*/
