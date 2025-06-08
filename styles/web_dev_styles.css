@@ -299,6 +299,39 @@ section {
 /*##################################*/
 
 
+.roadmap {
+  width: 250px;
+  margin: 40px auto;
+  border-left: 4px solid #3498db;
+  padding-left: 20px;
+  position: relative;
+}
+
+.step {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  background: #3498db;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  position: absolute;
+  left: -42px;
+  top: 0;
+}
+
+.step p {
+  margin: 0;
+  font-size: 16px;
+}
+
+
 
 
 /*############# Pop up images ###############*/
