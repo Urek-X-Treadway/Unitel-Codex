@@ -280,37 +280,40 @@ hr {
 
 
 .profile_container {
-    border: 2px solid;
+    /*border: 2px solid;*/
     text-align: left;
+
+    font-size: 2em;
+
+    display: flex;
     
 
 }
 
 
-#div_img {
-    border: 2px solid yellow;
-    display: flex;
-    margin-right: 1250px;
-    justify-content: left;
+.profile_container button{
+    background-color: #be5050;
+    color: #121212;
+    border: 2px solid white;
+    padding: 5px 10px;
+    font-size: 0.7em;
+
+}
+
+
+ul {
+    list-style: none;
+    height: fit-content;
+}
+
+li {
+    display: block;
+
 }
 
 
-#div_info {
-
-    border: 2px solid red;
-}
 
 
-
-
-
-.profile_photo {
-    width: 150px;
-    margin: 20px auto;
-    text-align: center;
-    border: 2px solid;
-
-}
 .profile_photo {
     width: 150px;
     height: 150px;
@@ -318,15 +321,8 @@ hr {
     object-fit: cover;
     border: 3px solid #be5050;
 }
-.change-photo-btn {
-    margin-top: 10px;
-    background-color: #007bff;
-    color: white;
-    padding: 6px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: not-allowed; /* indicates no action without JS */
-}
+
+
 
 
 
