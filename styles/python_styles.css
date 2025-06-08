@@ -189,14 +189,17 @@ body{
 
 a {
     color: #69b6e2;
+    text-decoration: none;
 }
 
 a:hover {
     color: #9675f9;
+    text-decoration: none;
 }
 
 a:active {
     color: #f15d64;
+    text-decoration: none;
 }
 
 /*############ Link colors #################*/
