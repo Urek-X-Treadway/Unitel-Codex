@@ -426,6 +426,58 @@ body{
 
 
 
+  #python_redirect_btn {
+    background-color: #69b6e2;
+    color: #121212;
+    padding: 10px 20px;
+    border-radius: 5px 5px 0 0;
+
+    border: 3px solid darkgoldenrod;
+    cursor: cell;
+  }
+
+    #python_redirect_btn:hover {
+    background-color: #000000;
+    color: #69b6e2;
+    padding: 10px 20px;
+    border-radius: 5px 5px 0 0;
+
+    border: 3px solid darkgoldenrod;
+  }
+
+
+  #python_redirect_btn a {
+    color: #000000;
+    text-decoration: none;
+  }
+
+  #python_redirect_btn a:hover {
+    color: #69b6e2;
+    text-decoration: none;
+  }
+
+
+    #python_redirect_btn a:active {
+    color: #69b6e2;
+    text-decoration: none;
+  }
+
+
+
+
+
+  
+
+
+
+  #webdev_section li {
+    border-bottom: 2px dashed darkgoldenrod; 
+    margin: 0px 100px 5px 100px;
+    
+  
+  }
+
+
 /*############## Footer ##############*/
 
 
