@@ -43,63 +43,12 @@
 
                 <div class="user-menu" id="userMenu">
                     <a href="/User-Menu/profile.html" id="profileLink">Profile</a>
-                    <a href="/User-Menu/account_settings.html" id="accountLink">Account Settings</a>
                     <a href="#" id="signInBtn">Sign In</a>
                     <a href="#" id="logOutBtn">Log Out</a>
                 </div>
             </div>
 
         </nav>
-
-
-        <script type="module">
-        import { createClient } from 'https://esm.sh/@supabase/supabase-js';
-
-        const supabase = createClient(
-            'https://cknbtyugssmruzwlcymq.supabase.co',
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNrbmJ0eXVnc3NtcnV6d2xjeW1xIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY0MTQ2MjgsImV4cCI6MjA2MTk5MDYyOH0.QjsuC1jhnuwdVJzCRdyfsFh-Mt1yXj5Y4ve4o_jFnpE' // ← replace this with your anon key
-        );
-
-         const signInBtn = document.getElementById("signInBtn");
-         const logOutBtn = document.getElementById("logOutBtn");
-         const profileLink = document.getElementById("profileLink");
-         const accountLink = document.getElementById("accountLink");
-
-         async function updateMenu() {
-            const { data: { user } } = await supabase.auth.getUser();
-
-           if (user) {
-             signInBtn.style.display = "none";
-             logOutBtn.style.display = "block";
-             profileLink.style.display = "block";
-             accountLink.style.display = "block";
-
-            localStorage.setItem("user", JSON.stringify(user));
-            } else {
-             signInBtn.style.display = "block";
-              logOutBtn.style.display = "none";
-             profileLink.style.display = "none";
-              accountLink.style.display = "none";
-            
-           localStorage.removeItem("user");
-          }
-          }
-
-          // Trigger Sign-In
-         signInBtn.addEventListener("click", async () => {
-           await supabase.auth.signInWithOAuth({ provider: 'google' });
-         });
-
-         // Trigger Log-Out
-         logOutBtn.addEventListener("click", async () => {
-           await supabase.auth.signOut();
-            updateMenu();
-         });
-     
-         // Update on page load
-         updateMenu();
-        </script>
-
 
 
 
