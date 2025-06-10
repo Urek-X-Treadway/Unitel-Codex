@@ -298,7 +298,7 @@ body{
 .right_popup {
     display: none;
     position: absolute;     /*this keep it at one place and not move it*/
-    top: 100%;
+    top: 120%;
     left: 80%;
     transform: translate(-50%, -50%);
     width: 350px;
