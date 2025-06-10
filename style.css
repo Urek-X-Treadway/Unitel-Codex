@@ -297,15 +297,16 @@ body{
 
 .right_popup {
     display: none;
-    position: fixed;
-    top: 35%;
-    left: 75%;
+    position: absolute;     /*this keep it at one place and not move it*/
+    top: 100%;
+    left: 80%;
     transform: translate(-50%, -50%);
-    width: auto;
-    height: auto;
+    width: 350px;
+    height: 200px;
     background: #121212;
     border: 2px solid #69b6e2;
     z-index: 100;
+    padding-top: 15px;
 }
   
 
