@@ -187,9 +187,42 @@
             <h3>ubunty = using apt</h3>
         
     
-            <pre><code>sudo apt install python3</code></pre>
+            <pre><code id="ttg">sudo apt install python3</code></pre>
+
+
+        
+
+
+            <div id="space_code">
+            
+            
+            <div class="wrapper">
+                <div class="code-header">Shell</div>
+                    <div class="code-block-wrapper">
+                        <div class="code-container" id="code-block">
+                        sudo apt install python3
+            </div>
+            <button class="copy-btn" onclick="copyCode()">Copy</button>
+                </div>
+            </div>
+
+            <script>
+            function copyCode() {
+            const code = document.getElementById("code-block").innerText;
+            navigator.clipboard.writeText(code).then(() => {});}
+
+            </script>
+
+            </div>
                 
             </section>
+
+
+
+
+
+
+
 
             <section id="macos_download_section">
                 
