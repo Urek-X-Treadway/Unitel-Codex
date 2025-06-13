@@ -313,6 +313,85 @@ section {
 
 
 
+/*######### Another Style for the Code space #################*/
+
+
+#space_code {
+      background-color: #0d1117;
+      color: #c9d1d9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+    }
+
+
+.wrapper {
+      width: 90%;
+      max-width: 800px;
+      text-align: center;
+
+      
+    }
+
+    .code-header {
+      background-color: #2c2f33;
+      color: #d1d5da;
+      font-weight: bold;
+      padding: 10px 0;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      font-size: 16px;
+    }
+
+    .code-container {
+      position: relative;
+      background-color: #161b22;
+      color: #d1d5da;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 15px;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+      padding: 16px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+      overflow-x: auto;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      text-align: left;
+    }
+
+    .code-container::before {
+      content: "$ ";
+      color: #2f81f7;
+      font-weight: bold;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #238636;
+      border: none;
+      color: white;
+      padding: 4px 10px;
+      font-size: 12px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .copy-btn:hover {
+      background-color: #2ea043;
+    }
+
+    .code-block-wrapper {
+      position: relative;
+    }
+
+/*##################################*/
+
+
 
 /*############# Pop up images ###############*/
 
