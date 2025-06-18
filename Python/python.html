@@ -6,7 +6,24 @@
         <link rel="stylesheet"  href="../styles/python_styles.css">
         <link rel="icon" href="../Images/favicon/UX.png" type="image/x-icon">
 
-        <link rel="stylesheet"  href="../styles/python_styles.css">
+        <link rel="stylesheet"  href="../Python/Code_Editor/style.css">
+
+
+
+
+
+
+        <!-- Prism Dark Theme and plugins -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-c.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+ <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
 
 
 
@@ -93,10 +110,10 @@
 
             <p>Before we begin anything, how about we download python3 as it is the latest version of python.</p>
 
-            <input type="radio" id="Window_tab" name="tab_group" checked>
+            <input type="radio" id="Window_tab" name="tab_group">
             <label for="Window_tab">Window</label>
 
-            <input type="radio" id="linux_tab" name="tab_group">
+            <input type="radio" id="linux_tab" name="tab_group" checked>
             <label for="linux_tab">Linux</label>
 
             <input type="radio" id="macos_tab" name="tab_group">
@@ -195,13 +212,13 @@
             <h3>ubunty = using apt</h3>
         
     
-            <pre><code id="ttg">sudo apt install python3</code></pre>
+            <!-- <pre><code id="ttg">sudo apt install python3</code></pre> -->
 
 
         
 
 
-            <div id="space_code">
+            <!-- <div id="space_code">
             
             
             <div class="wrapper">
@@ -221,7 +238,67 @@
 
             </script>
 
-            </div>
+            </div> -->
+
+                <!-- Here is the new code block -->
+
+
+                <div class="container"
+        data-default-python="print(&quot;sudo apt install python3&quot;)"
+        data-default-bash="sudo apt install python3">
+
+  <div class="code-header">
+    <span class="fileName">script.sh</span>
+    <div class="code-actions">
+      <select class="languageSelect" aria-label="Select programming language">
+        <!-- <option value="python">Python</option>             -->
+        <option value="bash" selected>Bash</option>
+      </select>
+      <button class="copyBtn" aria-label="Copy code to clipboard">Copy</button>
+      <span class="copyMessage" style="display:none;">Copied!</span>
+      <button class="editBtn" aria-label="Edit code">Edit</button>
+      <button class="saveBtn" aria-label="Save code" style="display:none;">Save</button>
+      <button class="cancelBtn" aria-label="Cancel edit" style="display:none;">Cancel</button>
+    </div>
+  </div>
+
+  <div class="codeWrapper" tabindex="0">
+    <pre class="line-numbers"><code class="language-bash codeBlock">sudo apt install python3</code></pre>
+  </div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/Python/Code_Editor/editor.js"></script>
+
+            
+<!--  -->
+<!--  -->
+ 
+
+
+
+
+
+
+
+
+
+
+
                 
             </section>
 
