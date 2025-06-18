@@ -1,98 +1,80 @@
-const copyBtn = document.getElementById('copyBtn');
-const editBtn = document.getElementById('editBtn');
-const saveBtn = document.getElementById('saveBtn');
-const cancelBtn = document.getElementById('cancelBtn');
-const runBtn = document.getElementById('runBtn');
-const codeWrapper = document.getElementById('codeWrapper');
-const fileNameElem = document.getElementById('fileName');
-const languageSelect = document.getElementById('languageSelect');
-const consoleDiv = document.getElementById('console');
 
-let originalCode = '';
-let isEditing = false;
 
-const defaultCodes = {
-  python: `def greet():
-    print("Hello, dark world!")`,
-  javascript: `function greet() {
-  console.log("Hello, dark world!");
-}
-greet();`,
-  c: `#include <stdio.h>
 
-int main() {
-    printf("Hello, dark world!\\n");
-    return 0;
-}`,
-  html: `<!DOCTYPE html>
-<html>
-<head><title>Hello</title></head>
-<body>
-  <h1>Hello, dark world!</h1>
-</body>
-</html>`,
-  java: `public class Main {
-  public static void main(String[] args) {
-    System.out.println("Hello, dark world!");
-  }
-}`
-};
 
-function getLanguage() {
-  return languageSelect.value;
-}
+document.querySelectorAll('.container').forEach(container => {
+  const languageSelect = container.querySelector('.languageSelect');
+  const fileNameElem = container.querySelector('.fileName');
+  const codeWrapper = container.querySelector('.codeWrapper');
+  const consoleDiv = container.querySelector('.console');
 
-function getFileName(lang) {
-  switch(lang) {
-    case 'python': return 'script.py';
-    case 'javascript': return 'script.js';
-    case 'c': return 'program.c';
-    case 'html': return 'index.html';
-    case 'java': return 'Main.java';
-    default: return 'script.txt';
-  }
-}
+  const defaultCodes = {
+    python: container.dataset.defaultPython,
+    bash: container.dataset.defaultBash,
+    javascript: container.dataset.defaultJavascript,
+    c: container.dataset.defaultC,
+    html: container.dataset.defaultHtml,
+    java: container.dataset.defaultJava
+  };
 
-function initCode() {
-  const lang = getLanguage();
-  fileNameElem.textContent = getFileName(lang);
+  const fileNames = {
+    python: 'script.py',
+    bash: 'script.sh',
+    javascript: 'script.js',
+    c: 'program.c',
+    html: 'index.html',
+    java: 'Main.java'
+  };
 
-  const pre = document.createElement('pre');
-  pre.className = 'line-numbers';
-  const code = document.createElement('code');
-  code.className = `language-${lang}`;
-  code.id = 'codeBlock';
-  code.textContent = defaultCodes[lang] || '';
-  pre.appendChild(code);
+  languageSelect.addEventListener('change', () => {
+    const lang = languageSelect.value;
+    const newCode = defaultCodes[lang] || '';
 
-  codeWrapper.innerHTML = '';
-  codeWrapper.appendChild(pre);
-  Prism.highlightElement(code);
+    // Update file name
+    fileNameElem.textContent = fileNames[lang] || 'script.txt';
 
-  consoleDiv.textContent = 'Console output will appear here...';
+    // Update code block
+    const pre = document.createElement('pre');
+    pre.className = 'line-numbers';
+    const code = document.createElement('code');
+    code.className = `language-${lang} codeBlock`;
+    code.textContent = newCode;
+    pre.appendChild(code);
+
+    codeWrapper.innerHTML = '';
+    codeWrapper.appendChild(pre);
+    Prism.highlightElement(code);
+
+    consoleDiv.textContent = 'Console output will appear here...';
+  });
+});
+
+
+
+
+function getDefaultCodes(container) {
+  return {
+    python: container.dataset.defaultPython || `def greet():\n    print("Hello, dark world!")`,
+    javascript: `console.log("Hello, dark world!");`,
+    c: `#include <stdio.h>\n\nint main() {\n    printf("Hello, dark world!\\n");\n    return 0;\n}`,
+    html: `<h1>Hello, dark world!</h1>`,
+    java: `public class Main {\n  public static void main(String[] args) {\n    System.out.println("Hello, dark world!");\n  }\n}`,
+    bash: container.dataset.defaultBash || `#!/bin/bash\n\necho "Hello, world!"`
+  };
 }
 
+// Enable auto close pairs for textarea
 function enableAutoClosePairs(textarea) {
   textarea.addEventListener('keydown', (e) => {
-    const pairs = {
-      '(': ')',
-      '[': ']',
-      '{': '}',
-      '"': '"',
-      "'": "'",
-      '`': '`',
-    };
+    const pairs = {'(': ')', '[': ']', '{': '}', '"': '"', "'": "'", '`': '`'};
     const openChar = e.key;
     if (pairs[openChar]) {
       e.preventDefault();
-
       const start = textarea.selectionStart;
       const end = textarea.selectionEnd;
-      const value = textarea.value;
-
-      const newValue = value.substring(0, start) + openChar + pairs[openChar] + value.substring(end);
-      textarea.value = newValue;
-
+      const val = textarea.value;
+      const newVal = val.substring(0, start) + openChar + pairs[openChar] + val.substring(end);
+      textarea.value = newVal;
       textarea.selectionStart = textarea.selectionEnd = start + 1;
     } else if (e.key === 'Backspace') {
       const start = textarea.selectionStart;
@@ -111,207 +93,49 @@ function enableAutoClosePairs(textarea) {
   });
 }
 
-copyBtn.addEventListener('click', () => {
-  let codeText = '';
-  if (isEditing) {
-    const textarea = document.getElementById('codeBlock');
-    codeText = textarea.value;
-  } else {
-    const codeElem = document.getElementById('codeBlock');
-    codeText = codeElem.innerText;
-  }
-  navigator.clipboard.writeText(codeText).then(() => {
-    const copyMsg = document.getElementById('copyMessage');
-    copyMsg.classList.add('visible');
-    setTimeout(() => {
-      copyMsg.classList.remove('visible');
-    }, 2000);
-  }).catch(() => {
-    const copyMsg = document.getElementById('copyMessage');
-    copyMsg.textContent = 'Failed to copy!';
-    copyMsg.classList.add('visible');
-    setTimeout(() => {
-      copyMsg.classList.remove('visible');
-      copyMsg.textContent = 'Copied!'; // reset text
-    }, 2000);
-  });
-});
+document.querySelectorAll('.container').forEach(container => {
+  const copyBtn = container.querySelector('.copyBtn');
+  const editBtn = container.querySelector('.editBtn');
+  const saveBtn = container.querySelector('.saveBtn');
+  const cancelBtn = container.querySelector('.cancelBtn');
+  const runBtn = container.querySelector('.runBtn');
+  const languageSelect = container.querySelector('.languageSelect');
+  const codeWrapper = container.querySelector('.codeWrapper');
+  const fileNameElem = container.querySelector('.fileName');
+  const consoleDiv = container.querySelector('.console');
+  let codeBlock = container.querySelector('.codeBlock');
 
-editBtn.addEventListener('click', () => {
-  if (isEditing) return;
-  const codeElem = document.getElementById('codeBlock');
-  originalCode = codeElem.innerText;
-
-  const textarea = document.createElement('textarea');
-  textarea.id = 'codeBlock';
-  textarea.value = originalCode;
-
-  codeWrapper.innerHTML = '';
-  codeWrapper.appendChild(textarea);
-
-  enableAutoClosePairs(textarea);
-
-  toggleButtons(true);
-  isEditing = true;
-});
-
-saveBtn.addEventListener('click', () => {
-  if (!isEditing) return;
-  const textarea = document.getElementById('codeBlock');
-  const newCode = textarea.value;
-
-  const lang = getLanguage();
-  const pre = document.createElement('pre');
-  pre.className = 'line-numbers';
-  const code = document.createElement('code');
-  code.className = `language-${lang}`;
-  code.id = 'codeBlock';
-  code.textContent = newCode;
-
-  codeWrapper.innerHTML = '';
-  codeWrapper.appendChild(pre);
-  pre.appendChild(code);
-
-  Prism.highlightElement(code);
-
-  toggleButtons(false);
-  isEditing = false;
-
-  consoleDiv.textContent = 'Console output will appear here...';
-});
-
-cancelBtn.addEventListener('click', () => {
-  if (!isEditing) return;
-
-  const lang = getLanguage();
-  const pre = document.createElement('pre');
-  pre.className = 'line-numbers';
-  const code = document.createElement('code');
-  code.className = `language-${lang}`;
-  code.id = 'codeBlock';
-  code.textContent = originalCode;
-
-  codeWrapper.innerHTML = '';
-  codeWrapper.appendChild(pre);
-  pre.appendChild(code);
-
-  Prism.highlightElement(code);
-
-  toggleButtons(false);
-  isEditing = false;
-});
-
-languageSelect.addEventListener('change', () => {
-  if (isEditing) {
-    if (!confirm("Changing language will discard unsaved changes. Continue?")) {
-      languageSelect.value = getLanguage(); // revert select
-      return;
-    }
-    isEditing = false;
-    toggleButtons(false);
-  }
-  initCode();
-});
-
-function toggleButtons(editing) {
-  editBtn.style.display = editing ? 'none' : 'inline-block';
-  saveBtn.style.display = editing ? 'inline-block' : 'none';
-  cancelBtn.style.display = editing ? 'inline-block' : 'none';
-}
-
-// Run button logic
-runBtn.addEventListener('click', () => {
-  consoleDiv.textContent = ''; // clear previous output
-  const lang = getLanguage();
-
-  if (isEditing) {
-    alert("Please save your changes before running the code.");
-    return;
-  }
-
-  const codeText = document.getElementById('codeBlock').innerText;
-
-  if (lang === 'javascript') {
-    try {
-      // Capture console.log calls
-      const logs = [];
-      const originalConsoleLog = console.log;
-      console.log = (...args) => {
-        logs.push(args.join(' '));
-        originalConsoleLog.apply(console, args);
-      };
-      // Run user JS code
-      new Function(codeText)();
-      console.log = originalConsoleLog;
-
-      consoleDiv.textContent = logs.length ? logs.join('\n') : 'Code executed. No output.';
-    } catch (err) {
-      consoleDiv.textContent = 'Error: ' + err.message;
-    }
-  } else {
-    // For other languages, no execution engine, just show placeholder
-    consoleDiv.textContent = `Running ${lang.toUpperCase()} code is not supported in this demo.\n\nYour code:\n\n${codeText}`;
-  }
-});
-
-
-
-
-let blockCounter = 0;
-
-function addCodeBlock() {
-  blockCounter++;
-
-  const lang = "python";
-  const fileName = `script${blockCounter}.py`;
-  const defaultCode = `def greet():\n    print("Hello from block ${blockCounter}!")`;
-
-  const container = document.getElementById('codeBlocksContainer');
-
-  const block = document.createElement('div');
-  block.className = 'container';
-  block.innerHTML = `
-    <div class="code-header">
-      <span class="file-name">${fileName}</span>
-      <div class="code-actions">
-        <button class="copyBtn">Copy</button>
-        <span class="copyMessage">Copied!</span>
-        <button class="editBtn">Edit</button>
-        <button class="saveBtn" style="display:none;">Save</button>
-        <button class="cancelBtn" style="display:none;">Cancel</button>
-        <button class="runBtn">Run</button>
-      </div>
-    </div>
-    <div class="codeWrapper">
-      <pre class="line-numbers"><code class="language-python codeBlock">${defaultCode}</code></pre>
-    </div>
-    <div class="console">Console output will appear here...</div>
-  `;
-
-  container.appendChild(block);
-
-  Prism.highlightAllUnder(block);
-  bindEventsToBlock(block);
-}
-
-
-
-
-
-
-function bindEventsToBlock(block) {
-  const codeWrapper = block.querySelector('.codeWrapper');
-  const copyBtn = block.querySelector('.copyBtn');
-  const editBtn = block.querySelector('.editBtn');
-  const saveBtn = block.querySelector('.saveBtn');
-  const cancelBtn = block.querySelector('.cancelBtn');
-  const runBtn = block.querySelector('.runBtn');
-  const copyMessage = block.querySelector('.copyMessage');
-  const consoleDiv = block.querySelector('.console');
-  const codeBlock = block.querySelector('.codeBlock');
-
-  let originalCode = codeBlock.innerText;
+  let originalCode = codeBlock.innerText.trim();
   let isEditing = false;
+
+  function getLanguage() {
+    return languageSelect.value;
+  }
+
+  function getFileName(lang) {
+    switch(lang) {
+      case 'python': return 'script.py';
+      case 'javascript': return 'script.js';
+      case 'c': return 'program.c';
+      case 'html': return 'index.html';
+      case 'java': return 'Main.java';
+      case 'bash': return 'script.sh';
+      default: return 'script.txt';
+    }
+  }
+
+  function updateCodeBlock(lang, code) {
+    codeWrapper.innerHTML = '';
+    const pre = document.createElement('pre');
+    pre.className = 'line-numbers';
+    const codeElem = document.createElement('code');
+    codeElem.className = `language-${lang} codeBlock`;
+    codeElem.textContent = code || defaultCodes[lang] || '';
+    pre.appendChild(codeElem);
+    codeWrapper.appendChild(pre);
+    Prism.highlightElement(codeElem);
+    codeBlock = codeElem; // update reference
+  }
 
   function toggleButtons(editing) {
     editBtn.style.display = editing ? 'none' : 'inline-block';
@@ -319,11 +143,51 @@ function bindEventsToBlock(block) {
     cancelBtn.style.display = editing ? 'inline-block' : 'none';
   }
 
+  function init() {
+    // Set filename based on language
+    const lang = getLanguage();
+    fileNameElem.textContent = getFileName(lang);
+
+    // If code block is empty, load default
+    if (!codeBlock.innerText.trim()) {
+      updateCodeBlock(lang, defaultCodes[lang]);
+      originalCode = defaultCodes[lang];
+    }
+  }
+
+  // Initialize on load for each container
+  init();
+
+  languageSelect.addEventListener('change', () => {
+    if (isEditing) {
+      if (!confirm("Changing language will discard unsaved changes. Continue?")) {
+        languageSelect.value = getLanguage();
+        return;
+      }
+      isEditing = false;
+      toggleButtons(false);
+    }
+    const lang = getLanguage();
+    fileNameElem.textContent = getFileName(lang);
+    updateCodeBlock(lang, defaultCodes[lang]);
+    originalCode = defaultCodes[lang];
+    consoleDiv.textContent = 'Console output will appear here...';
+  });
+
   copyBtn.addEventListener('click', () => {
-    let codeText = isEditing ? block.querySelector('textarea').value : codeBlock.innerText;
+    let codeText = isEditing ? codeWrapper.querySelector('textarea').value : codeBlock.innerText;
     navigator.clipboard.writeText(codeText).then(() => {
-      copyMessage.classList.add('visible');
-      setTimeout(() => copyMessage.classList.remove('visible'), 2000);
+      const copyMsg = container.querySelector('.copyMessage');
+      copyMsg.style.display = 'inline';
+      setTimeout(() => copyMsg.style.display = 'none', 2000);
+    }).catch(() => {
+      const copyMsg = container.querySelector('.copyMessage');
+      copyMsg.textContent = 'Failed to copy!';
+      copyMsg.style.display = 'inline';
+      setTimeout(() => {
+        copyMsg.textContent = 'Copied!';
+        copyMsg.style.display = 'visible';
+      }, 2000);
     });
   });
 
@@ -334,6 +198,7 @@ function bindEventsToBlock(block) {
     const textarea = document.createElement('textarea');
     textarea.className = 'codeBlock';
     textarea.value = originalCode;
+
     enableAutoClosePairs(textarea);
 
     codeWrapper.innerHTML = '';
@@ -348,34 +213,20 @@ function bindEventsToBlock(block) {
     const textarea = codeWrapper.querySelector('textarea');
     const newCode = textarea.value;
 
-    const pre = document.createElement('pre');
-    pre.className = 'line-numbers';
-    const code = document.createElement('code');
-    code.className = 'language-python codeBlock';
-    code.textContent = newCode;
+    const lang = getLanguage();
+    updateCodeBlock(lang, newCode);
 
-    pre.appendChild(code);
-    codeWrapper.innerHTML = '';
-    codeWrapper.appendChild(pre);
-
-    Prism.highlightElement(code);
     isEditing = false;
     toggleButtons(false);
     consoleDiv.textContent = 'Console output will appear here...';
   });
 
   cancelBtn.addEventListener('click', () => {
-    const pre = document.createElement('pre');
-    pre.className = 'line-numbers';
-    const code = document.createElement('code');
-    code.className = 'language-python codeBlock';
-    code.textContent = originalCode;
+    if (!isEditing) return;
 
-    pre.appendChild(code);
-    codeWrapper.innerHTML = '';
-    codeWrapper.appendChild(pre);
+    const lang = getLanguage();
+    updateCodeBlock(lang, originalCode);
 
-    Prism.highlightElement(code);
     isEditing = false;
     toggleButtons(false);
   });
@@ -385,22 +236,29 @@ function bindEventsToBlock(block) {
       alert("Please save your code before running it.");
       return;
     }
+    const lang = getLanguage();
     const codeText = codeBlock.innerText;
-    consoleDiv.textContent = `Running PYTHON code is not supported in this demo.\n\nYour code:\n\n${codeText}`;
+
+    if (lang === 'javascript') {
+      try {
+        const logs = [];
+        const originalConsoleLog = console.log;
+        console.log = (...args) => {
+          logs.push(args.join(' '));
+          originalConsoleLog.apply(console, args);
+        };
+        new Function(codeText)();
+        console.log = originalConsoleLog;
+        consoleDiv.textContent = logs.length ? logs.join('\n') : 'Code executed. No output.';
+      } catch (err) {
+        consoleDiv.textContent = 'Error: ' + err.message;
+      }
+    } else {
+      consoleDiv.textContent = `Running ${lang.toUpperCase()} code is not supported in this demo.\n\nYour code:\n\n${codeText}`;
+    }
   });
-}
 
-
-
-
-
-
-
-
-
-
-// Initialize on load
-initCode();
+});
 
 
 
