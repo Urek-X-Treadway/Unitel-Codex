@@ -354,7 +354,7 @@ section {
       border-bottom-left-radius: 6px;
       border-bottom-right-radius: 6px;
       padding: 16px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 0 8px rgba(49, 123, 190, 0.7);
       overflow-x: auto;
       line-height: 1.5;
       white-space: pre-wrap;
@@ -391,6 +391,64 @@ section {
 
 /*##################################*/
 
+
+
+/*############ glowing button ###############*/
+
+
+.cool_button_style button {
+            width: 188px;
+            height: 46px;
+            background: #69b6e2;
+            border-radius: 46px;
+            margin-left: 100px;
+            margin-top: 35px;
+            box-shadow: rgba(105, 182, 226, .5) 0 10px 32px 0;
+            cursor: pointer;
+            padding-left: 4px;
+            padding-right: 4px;
+            transition: all .1s ease-in-out 0s;
+            border: 2px solid rgb(105, 182, 226);
+            font-size: 1.5rem;
+        
+}
+
+
+.cool_button_style button:hover {
+            width: 188px;
+            height: 46px;
+            background: #ffc342;
+            border-radius: 46px;
+            margin-left: 100px;
+            margin-top: 35px;
+            box-shadow: rgba(249, 255, 66, .5) 0 10px 32px 0;
+            cursor: pointer;
+            padding-left: 4px;
+            padding-right: 4px;
+            transition: all .1s ease-in-out 0s;
+            border: 2px solid rgb(255, 211, 66);
+            font-size: 1.5rem;    
+}
+
+
+.cool_button_style button:active {
+            width: 188px;
+            height: 46px;
+            background: #69b6e2;
+            border-radius: 46px;
+            margin-left: 100px;
+            margin-top: 35px;
+            box-shadow: rgba(105, 182, 226, .5) 0 10px 32px 0;
+            cursor: pointer;
+            padding-left: 4px;
+            padding-right: 4px;
+            transition: all .1s ease-in-out 0s;
+            border: 2px solid #69b6e2;
+            font-size: 1.5rem;
+}
+
+
+/*##################################*/
 
 
 /*############# Pop up images ###############*/
