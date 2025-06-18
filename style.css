@@ -59,7 +59,9 @@ body{
 
 
 
-
+.ad_bar {
+  background-color: #3333335f;
+}
 
 #python_hr {
   margin-bottom: 150px;
