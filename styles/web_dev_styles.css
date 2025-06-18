@@ -299,81 +299,60 @@ section {
 /*##################################*/
 
 
-.roadmap {
-  width: 250px;
-  margin: 40px auto;
-  border-left: 4px solid #3498db;
-  padding-left: 20px;
-  position: relative;
-}
+/*############ glowing button ###############*/
 
-.step {
-  margin-bottom: 40px;
-  position: relative;
-}
 
-.circle {
-  width: 30px;
-  height: 30px;
-  background: #3498db;
-  color: white;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 30px;
-  font-weight: bold;
-  position: absolute;
-  left: -42px;
-  top: 0;
-}
-
-.step p {
-  margin: 0;
-  font-size: 16px;
+.cool_button_style button {
+            width: 188px;
+            height: 46px;
+            background: #ff424d;
+            border-radius: 46px;
+            margin-left: 100px;
+            margin-top: 35px;
+            box-shadow: rgba(255, 66, 77, .5) 0 10px 32px 0;
+            cursor: pointer;
+            padding-left: 4px;
+            padding-right: 4px;
+            transition: all .1s ease-in-out 0s;
+            border: 2px solid #ff2633;
+            font-size: 1.5rem;
+        
 }
 
 
+.cool_button_style button:hover {
+            width: 188px;
+            height: 46px;
+            background: #ffc342;
+            border-radius: 46px;
+            margin-left: 100px;
+            margin-top: 35px;
+            box-shadow: rgba(249, 255, 66, .5) 0 10px 32px 0;
+            cursor: pointer;
+            padding-left: 4px;
+            padding-right: 4px;
+            transition: all .1s ease-in-out 0s;
+            border: 2px solid rgb(255, 211, 66);
+            font-size: 1.5rem;    
+}
 
 
-/*############# Pop up images ###############*/
+.cool_button_style button:active {
+            width: 188px;
+            height: 46px;
+            background: #ff424d;
+            border-radius: 46px;
+            margin-left: 100px;
+            margin-top: 35px;
+            box-shadow: rgba(255, 66, 77, .5) 0 10px 32px 0;
+            cursor: pointer;
+            padding-left: 4px;
+            padding-right: 4px;
+            transition: all .1s ease-in-out 0s;
+            border: 2px solid #ff2633;
+            font-size: 1.5rem;
+}
 
-
-    /* this section is for step by step images */
-    .img_container{
-        display: flex;
-        justify-content: center;
-  
-    }
-
-    .the_step_img{
-        width: 120px;
-        height: 75px;
-        margin-right: 10px;
-    }
-
-
-
-    .popup-box {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 960px;
-        height: 555px;
-        background: #121212;
-        border: 2px solid #69b6e2;
-        z-index: 100;
-    }
-
-    .hover-area:hover .popup-box {
-        display: block;
-    }
-
-    .popup-box img{
-        width: 960px;
-        height: 555px;
-
-    }
 
 /*##################################*/
 
