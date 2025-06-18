@@ -71,15 +71,22 @@ body{
 
 
 
-/* quick tab hide/show */
 
 
-  
 
 
 
 
     /* Hide all content sections initially */
+
+  
+
+    label img{
+      width: 100px;
+      height: 100pxs;
+    }
+
+
 
 
     input[type="radio"] {
