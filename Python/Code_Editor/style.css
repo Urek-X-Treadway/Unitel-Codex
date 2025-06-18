@@ -1,5 +1,5 @@
 /* Base page styling */
-body {
+/* body {
   background-color: #121212;
   color: #f1f1f1;
   font-family: Arial, sans-serif;
@@ -9,7 +9,7 @@ body {
   min-height: 100vh;
   flex-direction: column;
   align-items: center;
-}
+} */
 
 /* Container for code + console */
 .container {
@@ -22,6 +22,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0;
+
+  margin: auto;
 }
 
 /* Header with file name and controls */
@@ -37,7 +39,7 @@ body {
 }
 
 .code-actions button,
-select.language-select {
+.languageSelect {
   background-color: #333;
   border: none;
   color: #fff;
@@ -52,12 +54,12 @@ select.language-select {
 }
 
 .code-actions button:hover,
-select.language-select:hover {
+.languageSelect:hover {
   background-color: #555;
 }
 
 /* Code block styling */
-#codeWrapper {
+.codeWrapper {
   background-color: #1e1e1e;
   border-top: 1px solid #333;
   overflow: auto;
@@ -79,7 +81,7 @@ pre.line-numbers {
 }
 
 /* Textarea styling */
-textarea {
+textarea.codeBlock {
   width: 100%;
   height: 320px;
   background-color: #1e1e1e;
@@ -96,7 +98,7 @@ textarea {
 }
 
 /* Console output styling */
-#console {
+.console {
   background-color: #121212;
   color: #f1f1f1;
   font-family: Consolas, monospace;
@@ -126,12 +128,21 @@ textarea {
 
 /* Copy message fade effect */
 #copyMessage {
+  color: #90caf9;
+  margin-left: 8px;
+  font-size: 13px;
   opacity: 0;
   transition: opacity 0.3s ease;
-  display: none;
+  user-select: none;
+  pointer-events: none;
+  display: inline-block; /* always take space */
 }
 
 #copyMessage.visible {
-  display: inline;
   opacity: 1;
 }
+
+
+
+
+
