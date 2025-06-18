@@ -150,30 +150,51 @@ body{
 
 .breadcrumb {
     border-radius: 5px 5px 0 0;
-    width: 200px;
+    width: 300px;
     margin: auto;
+    
+    background: #1f282e;
+    box-shadow: rgba(105, 182, 226, .5) 0 10px 32px 0;
+    cursor: pointer;
+    transition: all .1s ease-in-out 0s;
+    border: 2px solid #1f282e;
+    font-size: 0.5rem;
 
 }
 
 
-.breadcrumb span {
+.breadcrumb button {
     color: white;
+
+    border-radius: 5px 5px 0 0;
+            background: #1f282e;
+            box-shadow: rgba(31, 40, 46, .5) 0 10px 32px 0;
+            cursor: pointer;
+            transition: all .1s ease-in-out 0s;
+            border: 2px solid rgb(31, 40, 46);
+            font-size: 1rem;
+
+    
 }
 
-.breadcrumb span:nth-of-type(2) {
-    color: red;
+.breadcrumb button:hover {
+    border-radius: 5px 5px 0 0;
+            background: #86b5d574;
+            cursor: pointer;
+            transition: all .1s ease-in-out 0s;
+            border: 2px solid #1f282e;
+            font-size: 1rem;
 }
 
-.breadcrumb a {
-    text-decoration: none;
-    color: #9675f9;
-}
-
-
-.breadcrumb a::before {
+.breadcrumb button:nth-child(1)::before {
     content: "🏛️";
 }
 
+.breadcrumb button:nth-child(2) {
+    background-color: rgba(169, 169, 169, 0.9);
+    color: rgb(0, 0, 0);
+    border: 2px solid rgba(169, 169, 169, 0.9);
+}
 
 /*##################################*/
 
