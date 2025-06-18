@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <title>ChatGPT-like Code Canvas with Console</title>
+
+  <!-- Prism Dark Theme and plugins -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-c.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+
+<div class="container" role="region" aria-label="Code editor with console">
+  <div class="code-header">
+    <span id="fileName">script.py</span>
+    <div class="code-actions">
+      <select id="languageSelect" class="language-select" aria-label="Select programming language">
+        <option value="python" selected>Python</option>
+        <option value="javascript">JavaScript</option>
+        <option value="c">C</option>
+        <option value="html">HTML</option>
+        <option value="java">Java</option>
+      </select>
+      <button id="copyBtn" aria-label="Copy code to clipboard">Copy</button>
+      <span id="copyMessage">Copied!</span>
+      <button id="editBtn" aria-label="Edit code">Edit</button>
+      <button id="saveBtn" aria-label="Save code" style="display:none;">Save</button>
+      <button id="cancelBtn" aria-label="Cancel edit" style="display:none;">Cancel</button>
+      <button id="runBtn" aria-label="Run code">Run</button>
+    </div>
+  </div>
+  <div id="codeWrapper" tabindex="0">
+    <pre class="line-numbers"><code class="language-python" id="codeBlock">
+def greet():
+    print("Hello, dark world!")</code></pre>
+  </div>
+  <div id="console" aria-live="polite" aria-atomic="true" tabindex="0">Console output will appear here...</div>
+</div>
+
+
+
+
+
+
+<body>
+  <div id="codeBlocksContainer"></div>
+  <button onclick="addCodeBlock()">➕ Add Code Block</button>
+  <script src="editor.js"></script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="editor.js"></script>
+
+</body>
+</html>
