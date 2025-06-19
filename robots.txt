@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://my-fav-movies.xyz/sitemap.xml
+Sitemap: https://my-fav-movies.xyz/sitemap-index.xml
