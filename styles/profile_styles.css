@@ -274,6 +274,14 @@ section {
   font-style: normal;
 }
 
+/* @font-face {
+  font-family: 'Cairo';
+  src: url('../Fonts/Cairo/static/Cairo-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+
 /*##################################*/
 
 
