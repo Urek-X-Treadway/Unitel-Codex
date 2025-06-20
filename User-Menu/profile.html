@@ -1,123 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="../Images/favicon/UX.png" type="image/x-icon">
-        <link rel="stylesheet"  href="../styles/profile_styles.css">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../Images/favicon/UX.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../styles/profile_styles.css" />
+  <meta name="google-adsense-account" content="ca-pub-4751774215473177" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4751774215473177" crossorigin="anonymous"></script>
+  <title>Profile</title>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("userMenu");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+</head>
+<body>
+  <h1>Unitel-Codex</h1>
 
-        <meta name="google-adsense-account" content="ca-pub-4751774215473177">
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="/Images/favicon/UX.png" alt="Site Logo" class="site-logo" />
+    </div>
+    <div class="nav-center">
+      <a href="../"><button>Home</button></a>
+      <a href="../Python/python.html"><button>Python</button></a>
+      <a href="../Web-Dev/web_dev.html"><button>Web Dev</button></a>
+      <a href="../Linux/linux.html"><button>Linux</button></a>
+      <a href="../Archives/archives.html"><button>Archives</button></a>
+      <a href="../About/about.html"><button>About</button></a>
+    </div>
+    <div class="nav-right">
+      <input type="text" placeholder="Search..." class="search-bar" />
+      <img src="/Images/favicon/UX.png" alt="User Icon" class="user-icon" onclick="toggleMenu()" />
+      <div class="user-menu" id="userMenu">
+        <a href="/User-Menu/profile.html" id="profileLink">Profile</a>
+        <a href="#" id="signInBtn">Sign In</a>
+        <a href="#" id="logOutBtn">Log Out</a>
+      </div>
+    </div>
+  </nav>
 
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4751774215473177"
-     crossorigin="anonymous"></script>
-        <title>Profile</title>
+  <div class="breadcrumb">
+    <p><span><a href="../">Home</a></span> <span>>></span> Profile</p>
+  </div>
 
-        <script>
-            function toggleMenu() {
-            const menu = document.getElementById("userMenu");
-            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-            }
-        </script>
+  <div class="Banner_img">
+    <img id="bannerImage" src="/Images/Profile/Banner/DarkRed_eyes.png" />
+    <input type="file" id="bannerUpload" accept="image/*" />
+  </div>
 
+  <h1>Your Profile</h1>
 
+  <div class="profile_container">
+    <img class="profile_photo" id="avatarImage" src="/Images/favicon/UX.png" alt="Profile Photo" />
+    <input type="file" id="avatarUpload" accept="image/*" />
+    <ul>
+      <li>Username: <input type="text" id="usernameInput" /><button id="saveUsername">Save</button></li>
+      <li>Age: <input type="number" id="ageInput" /><button id="saveAge">Save</button></li>
+      <li>Role: <input type="text" id="rolesInput" /><button id="saveRoles">Save</button></li>
+    </ul>
+  </div>
 
-    
-    </head>
-    <body>
+  <hr />
 
-        <h1>Unitel-Codex</h1>
+  <input type="radio" id="account_setting_tab" name="tab_group" checked />
+  <label for="account_setting_tab">Account Setting</label>
+  <input type="radio" id="site_setting_tab" name="tab_group" />
+  <label for="site_setting_tab">Site Setting</label>
 
+  <section id="account_setting_section">
+    <button>Test</button>
+  </section>
 
-        <nav class="navbar">
-            <div class="nav-left">
-                <img src="/Images/favicon/UX.png" alt="Site Logo" class="site-logo">
-            </div>
+  <section id="site_setting_section">
+    <button>Test 2</button>
+  </section>
 
-            <div class="nav-center">
-                <a href="../"><button>Home</button></a>
-                <a href="../Python/python.html"><button>Python</button></a>
-                <a href="../Web-Dev/web_dev.html"><button>Web Dev</button></a>
-                <a href="../Linux/linux.html"><button>Linux</button></a>
-                <a href="../Archives/archives.html"><button>Archives</button></a>
-                <a href="../About/about.html"><button>About</button></a>
-
-            </div>
-
-            <div class="nav-right">
-                <input type="text" placeholder="Search..." class="search-bar">
-                <img src="/Images/favicon/UX.png" alt="User Icon" class="user-icon" onclick="toggleMenu()">
-
-                <div class="user-menu" id="userMenu">
-                    <a href="/User-Menu/profile.html" id="profileLink">Profile</a>
-                    <a href="#" id="signInBtn">Sign In</a>
-                    <a href="#" id="logOutBtn">Log Out</a>
-                </div>
-            </div>
-
-        </nav>
-
-
-        <div class="breadcrumb">
-            <p><span><a href="../">Home</a></span> <span>>></span> Profile</p>
-        </div>
-
-        <div class="Banner_img">
-            <img src="/Images/Profile/Banner/DarkRed_eyes.png">
-        </div>
-
-        <h1>Your Profile</h1>
-
-
-        <div class="profile_container">
-
-            <img class="profile_photo" src="/Images/favicon/UX.png" alt="Profile Photo"/>
-
-            <ul>
-                <li>Username: <button>John Wick</button></li>
-                <li>Age: <button>47</button> </li>
-                <li>Role: <button>Admin</button></li>
-
-            </ul>
-
-            
-
-        
-
-
-        </div>
-
-
-        <hr>
-
-
-        <input type="radio" id="account_setting_tab" name="tab_group" checked>
-        <label for="account_setting_tab">Account Setting</label>
-
-        <input type="radio" id="site_setting_tab" name="tab_group">
-        <label for="site_setting_tab">Site Setting</label>
-
-
-
-        <section id="account_setting_section">
-
-            <button>Test</button>
-
-
-        </section>
-
-        <section id="site_setting_section">
-
-            <button>Test 2</button>
-
-            
-        </section>
-
-
-
-
-
-       
-
-
-    </body>
+  <script type="module" src="../js/Profile_js/profile.js"></script>
+</body>
 </html>
