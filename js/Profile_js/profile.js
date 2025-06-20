@@ -201,3 +201,27 @@ saveProfileBtn.addEventListener("click", async () => {
 window.onload = updateAuthUI;
 
 
+function updateUIAfterLogin(session) {
+  // Hide Sign In, Show Log Out
+  signInBtn.style.display = "none";
+  logOutBtn.style.display = "inline-block";
+
+  // Show edit button if available
+  const editProfileBtn = document.getElementById("editProfileBtn");
+  if (editProfileBtn) {
+    editProfileBtn.style.display = "inline-block";
+  }
+
+  // Load profile info
+  loadProfile();
+}
+
+
+window.onload = async () => {
+  const { data: { session } } = await supabase.auth.getSession();
+  if (session) {
+    updateUIAfterLogin(session);
+  }
+};
+
+
