@@ -2,8 +2,10 @@ body{
     background-color: #121212;
     color: darksalmon;
     text-align: center;
-    font-family: 'Junicode','Times New Roman', Times, serif;
+    /* font-family: 'Junicode','Times New Roman', Times, serif; */
     height: 1500px;
+
+    font-family: "azeret-mono", 'azeret mono', monospace;
 
 
 }
@@ -150,7 +152,7 @@ body{
 
 .breadcrumb {
     border-radius: 5px 5px 0 0;
-    width: 200px;
+    width: 250px;
     margin: auto;
 
 }
@@ -178,10 +180,15 @@ body{
 /*##################################*/
 
 
+/*############ Banner image #################*/
 
 
+.Banner_img img {
+    max-width: 100.1%;
+    
+}
 
-
+/*##################################*/
 
 
 /*############ Link colors #################*/
@@ -250,9 +257,19 @@ section {
 
 /*########### Font Family ##############*/
 
-@font-face {
+/* @font-face {
   font-family: 'Junicode';
   src: url('./Fonts/Junicode/Junicode.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+
+
+
+@font-face {
+  font-family: 'azeret-mono';
+  src: url('../Fonts/Azeret-Mono/static/AzeretMono-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -315,8 +332,10 @@ li {
 
 
 .profile_photo {
-    width: 150px;
-    height: 150px;
+    /* width: 150px;
+    height: 150px; */
+    width: 4.5em;
+    height: 4.5em;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #be5050;
