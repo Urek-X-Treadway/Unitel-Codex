@@ -1,6 +1,5 @@
 
 
-
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const supabaseUrl = 'https://alamwqisxflupghrbius.supabase.co'
@@ -29,6 +28,16 @@ const saveProfileBtn = document.getElementById("saveProfileBtn");
 const cancelProfileBtn = document.getElementById("cancelProfileBtn");
 
 const userIcon = document.querySelector(".user-icon");
+
+
+// Parse hash and set session if redirected from OAuth
+supabase.auth.getSession().then(({ data: { session } }) => {
+  if (session) {
+    // Signed in successfully
+    window.history.replaceState({}, document.title, window.location.pathname); // Clean URL
+    updateUIAfterLogin(session);
+  }
+});
 
 // Helper: Upload image to Supabase storage
 async function uploadImage(file, bucket) {
