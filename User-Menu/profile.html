@@ -1,82 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="../Images/favicon/UX.png" type="image/x-icon" />
-  <link rel="stylesheet" href="../styles/profile_styles.css" />
-  <meta name="google-adsense-account" content="ca-pub-4751774215473177" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4751774215473177" crossorigin="anonymous"></script>
-  <title>Profile</title>
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("userMenu");
-      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-    }
-  </script>
-</head>
-<body>
-  <h1>Unitel-Codex</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="../Images/favicon/UX.png" type="image/x-icon">
+        <link rel="stylesheet"  href="../styles/profile_styles.css">
 
-  <nav class="navbar">
-    <div class="nav-left">
-      <img src="/Images/favicon/UX.png" alt="Site Logo" class="site-logo" />
-    </div>
-    <div class="nav-center">
-      <a href="../"><button>Home</button></a>
-      <a href="../Python/python.html"><button>Python</button></a>
-      <a href="../Web-Dev/web_dev.html"><button>Web Dev</button></a>
-      <a href="../Linux/linux.html"><button>Linux</button></a>
-      <a href="../Archives/archives.html"><button>Archives</button></a>
-      <a href="../About/about.html"><button>About</button></a>
-    </div>
-    <div class="nav-right">
-      <input type="text" placeholder="Search..." class="search-bar" />
-      <img src="/Images/favicon/UX.png" alt="User Icon" class="user-icon" onclick="toggleMenu()" />
-      <div class="user-menu" id="userMenu">
-        <a href="/User-Menu/profile.html" id="profileLink">Profile</a>
-        <a href="#" id="signInBtn">Sign In</a>
-        <a href="#" id="logOutBtn">Log Out</a>
-      </div>
-    </div>
-  </nav>
+        <meta name="google-adsense-account" content="ca-pub-4751774215473177">
 
-  <div class="breadcrumb">
-    <p><span><a href="../">Home</a></span> <span>>></span> Profile</p>
-  </div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4751774215473177"
+     crossorigin="anonymous"></script>
+        <title>Profile</title>
 
-  <div class="Banner_img">
-    <img id="bannerImage" src="/Images/Profile/Banner/DarkRed_eyes.png" />
-    <input type="file" id="bannerUpload" accept="image/*" />
-  </div>
+        <script>
+            function toggleMenu() {
+            const menu = document.getElementById("userMenu");
+            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+            }
+        </script>
 
-  <h1>Your Profile</h1>
 
-  <div class="profile_container">
-    <img class="profile_photo" id="avatarImage" src="/Images/favicon/UX.png" alt="Profile Photo" />
-    <input type="file" id="avatarUpload" accept="image/*" />
+
+    
+    </head>
+    <body>
+
+        <h1>Unitel-Codex</h1>
+
+
+        <nav class="navbar">
+            <div class="nav-left">
+                <img src="/Images/favicon/UX.png" alt="Site Logo" class="site-logo">
+            </div>
+
+            <div class="nav-center">
+                <a href="../"><button>Home</button></a>
+                <a href="../Python/python.html"><button>Python</button></a>
+                <a href="../Web-Dev/web_dev.html"><button>Web Dev</button></a>
+                <a href="../Linux/linux.html"><button>Linux</button></a>
+                <a href="../Archives/archives.html"><button>Archives</button></a>
+                <a href="../About/about.html"><button>About</button></a>
+
+            </div>
+
+            <div class="nav-right">
+                <input type="text" placeholder="Search..." class="search-bar">
+                <img src="/Images/favicon/UX.png" alt="User Icon" class="user-icon" onclick="toggleMenu()">
+
+                <div class="user-menu" id="userMenu">
+                    <a href="/User-Menu/profile.html" id="profileLink">Profile</a>
+                    <a href="#" id="signInBtn">Sign In</a>
+                    <a href="#" id="logOutBtn">Log Out</a>
+                </div>
+            </div>
+
+        </nav>
+
+
+        <div class="breadcrumb">
+            <p><span><a href="../">Home</a></span> <span>>></span> Profile</p>
+        </div>
+
+
+         <!-- Your existing HTML ... -->
+
+<div class="profile_container">
+
+    <img class="profile_photo" src="/Images/favicon/UX.png" alt="Profile Photo" id="profilePhoto"/>
+
     <ul>
-      <li>Username: <input type="text" id="usernameInput" /><button id="saveUsername">Save</button></li>
-      <li>Age: <input type="number" id="ageInput" /><button id="saveAge">Save</button></li>
-      <li>Role: <input type="text" id="rolesInput" /><button id="saveRoles">Save</button></li>
+        <li>Username: <button id="usernameBtn">John Wick</button></li>
+        <li>Age: <button id="ageBtn">47</button></li>
+        <li>Role: <button id="rolesBtn">Admin</button></li>
+
+        <li>Edit Profile: <button id="editProfileBtn">Edit</button></li>
     </ul>
+
+</div>
+
+<div class="Banner_img">
+    <img src="/Images/Profile/Banner/DarkRed_eyes.png" id="bannerPhoto">
+</div>
+
+<!-- ✅ Fixed Edit Profile Modal -->
+<div id="editProfileModal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <h2>Edit Profile</h2>
+
+    <label for="usernameInput">Username:</label><br />
+    <input type="text" id="usernameInput" placeholder="Enter username" /><br />
+
+    <label for="ageInput">Age:</label><br />
+    <input type="number" id="ageInput" placeholder="Enter age" min="1" /><br />
+
+    <label for="rolesInput">Roles (comma separated):</label><br />
+    <input type="text" id="rolesInput" placeholder="e.g. Admin, User" /><br />
+
+    <label for="avatarUpload">Profile Avatar:</label><br />
+    <input type="file" id="avatarUpload" accept="image/*" /><br />
+
+    <label for="bannerUpload">Banner Image:</label><br />
+    <input type="file" id="bannerUpload" accept="image/*" /><br />
+
+    <button id="saveProfileBtn">Save</button>
+    <button id="cancelProfileBtn">Cancel</button>
   </div>
+</div>
 
-  <hr />
 
-  <input type="radio" id="account_setting_tab" name="tab_group" checked />
-  <label for="account_setting_tab">Account Setting</label>
-  <input type="radio" id="site_setting_tab" name="tab_group" />
-  <label for="site_setting_tab">Site Setting</label>
 
-  <section id="account_setting_section">
-    <button>Test</button>
-  </section>
 
-  <section id="site_setting_section">
-    <button>Test 2</button>
-  </section>
 
-  <script type="module" src="../js/Profile_js/profile.js"></script>
-</body>
+        
+
+            
+
+        
+
+
+
+        <hr>
+
+
+        <input type="radio" id="account_setting_tab" name="tab_group" checked>
+        <label for="account_setting_tab">Account Setting</label>
+
+        <input type="radio" id="site_setting_tab" name="tab_group">
+        <label for="site_setting_tab">Site Setting</label>
+
+
+
+        <section id="account_setting_section">
+
+            <button>Test</button>
+
+
+        </section>
+
+        <section id="site_setting_section">
+
+            <button>Test 2</button>
+
+            
+        </section>
+
+
+
+       
+
+<!-- Your existing JS import -->
+<script type="module" src="../js/Profile_js/profile.js"></script>
+
+
+       
+    </body>
 </html>
