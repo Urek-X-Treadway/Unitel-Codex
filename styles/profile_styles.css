@@ -11,6 +11,77 @@ body{
 }
 
 
+body {
+  background-color: #121212;
+  color: darksalmon;
+  text-align: center;
+  height: 1500px;
+  font-family: "azeret-mono", 'azeret mono', monospace;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  width: 90%;
+  margin: auto;
+  text-align: left;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="number"],
+.modal-content input[type="file"] {
+  padding: 8px;
+  background-color: #1e1e1e;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: white;
+}
+
+.modal-content button {
+  background-color: #be5050;
+  color: #121212;
+  border: 2px solid white;
+  padding: 5px 10px;
+  font-size: 0.8em;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Existing styles unchanged below */
+/* ... keep your existing styles as-is from here ... */
+
+
 /*############ Nav Bar ################*/
 
 
@@ -143,6 +214,64 @@ body{
 }
 
 /*##################################*/
+
+
+
+/*########## new profile pop up #################*/
+
+
+
+
+/* Modal overlay with glass blur */
+/* Modal overlay with glass blur */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* full viewport width */
+  height: 100vh; /* full viewport height */
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  overflow: auto; /* allow scrolling if modal is tall */
+  padding: 20px; /* padding for small screens */
+}
+
+/* Modal content box - Responsive */
+.modal-content {
+  background: rgba(30, 30, 30, 0.85);
+  border-radius: 16px;
+  padding: 30px;
+  width: 100%;
+  max-width: 600px; /* Responsive max width */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  color: darksalmon;
+  font-size: 1.2em;
+  font-family: "azeret-mono", monospace;
+  text-align: left;
+  overflow-y: auto; /* allow scrolling inside if needed */
+  max-height: 90vh; /* ensure it doesn’t exceed screen */
+}
+
+
+
+
+
+/*##################################*/
+
+
+
+
+
+
+
+
+
+
+
 
 
 
