@@ -1,50 +1,96 @@
+
+
+
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
-const supabase = createClient(
-  "https://unitel-codex-db.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFsYW13cWlzeGZsdXBnaHJiaXVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzOTAyNTksImV4cCI6MjA2NTk2NjI1OX0.Fdd5xdjYQHKnHz63A4DMB5vRfNHSfVYd1zCuP-4Jo14" // ← Replace with your actual anon key
-);
+const supabaseUrl = 'https://alamwqisxflupghrbius.supabase.co'
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFsYW13cWlzeGZsdXBnaHJiaXVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzOTAyNTksImV4cCI6MjA2NTk2NjI1OX0.Fdd5xdjYQHKnHz63A4DMB5vRfNHSfVYd1zCuP-4Jo14' // <-- replace with actual anon key string
+const supabase = createClient(supabaseUrl, supabaseKey)
 
 // DOM Elements
 const signInBtn = document.getElementById("signInBtn");
 const logOutBtn = document.getElementById("logOutBtn");
+
+const usernameBtn = document.getElementById("usernameBtn");
+const ageBtn = document.getElementById("ageBtn");
+const rolesBtn = document.getElementById("rolesBtn");
+const editProfileBtn = document.getElementById("editProfileBtn");
+
+const profilePhoto = document.getElementById("profilePhoto");
+const bannerPhoto = document.getElementById("bannerPhoto");
+
+const modal = document.getElementById("editProfileModal");
 const usernameInput = document.getElementById("usernameInput");
 const ageInput = document.getElementById("ageInput");
 const rolesInput = document.getElementById("rolesInput");
-const profileImg = document.getElementById("avatarImage");
-const bannerImg = document.getElementById("bannerImage");
 const avatarUpload = document.getElementById("avatarUpload");
 const bannerUpload = document.getElementById("bannerUpload");
-const saveUsername = document.getElementById("saveUsername");
-const saveAge = document.getElementById("saveAge");
-const saveRoles = document.getElementById("saveRoles");
+const saveProfileBtn = document.getElementById("saveProfileBtn");
+const cancelProfileBtn = document.getElementById("cancelProfileBtn");
+
 const userIcon = document.querySelector(".user-icon");
 
 // Helper: Upload image to Supabase storage
 async function uploadImage(file, bucket) {
+  if (!file) return null;
   const filePath = `${Date.now()}_${file.name}`;
-  const { data, error } = await supabase.storage.from(bucket).upload(filePath, file);
-  if (error) return null;
-
+  const { data, error } = await supabase.storage.from(bucket).upload(filePath, file, { upsert: true });
+  if (error) {
+    console.error('Upload error:', error);
+    return null;
+  }
   const { data: publicUrlData } = supabase.storage.from(bucket).getPublicUrl(filePath);
   return publicUrlData.publicUrl;
 }
 
+// Update UI based on auth state
+async function updateAuthUI() {
+  const { data: { session } } = await supabase.auth.getSession();
+
+  if (session) {
+    // Signed in
+    signInBtn.style.display = "none";
+    logOutBtn.style.display = "inline-block";
+    editProfileBtn.style.display = "inline-block";
+
+    // Load profile info
+    await loadProfile();
+  } else {
+    // Signed out
+    signInBtn.style.display = "inline-block";
+    logOutBtn.style.display = "none";
+    editProfileBtn.style.display = "none";
+
+    // Clear profile info or set defaults
+    usernameBtn.textContent = "Not signed in";
+    ageBtn.textContent = "-";
+    rolesBtn.textContent = "-";
+    profilePhoto.src = "/Images/favicon/UX.png";
+    bannerPhoto.src = "/Images/Profile/Banner/DarkRed_eyes.png";
+    userIcon.src = "/Images/favicon/UX.png";
+  }
+}
+
 // Auth: Google Sign-In
 signInBtn.addEventListener("click", async () => {
-  await supabase.auth.signInWithOAuth({ provider: "google" });
+  await supabase.auth.signInWithOAuth({ 
+    provider: "google", 
+    options: { redirectTo: location.href } 
+  });
 });
-
 // Auth: Logout
 logOutBtn.addEventListener("click", async () => {
   await supabase.auth.signOut();
   window.location.reload();
 });
 
-// Load Profile
+// Load Profile data & update UI
 async function loadProfile() {
   const { data: { session } } = await supabase.auth.getSession();
-  if (!session) return;
+  if (!session) {
+    console.log("No user session");
+    return;
+  }
 
   const user = session.user;
 
@@ -54,63 +100,95 @@ async function loadProfile() {
     .eq("id", user.id)
     .single();
 
-  if (!profile || error) {
+  if (error) {
     console.error("Profile load error:", error);
     return;
   }
 
-  // Fill fields
+  // Update page buttons and images with profile data
+  usernameBtn.textContent = profile.username || "No username";
+  ageBtn.textContent = profile.age || "No age";
+  rolesBtn.textContent = profile.roles ? profile.roles.join(", ") : "No roles";
+
+  profilePhoto.src = profile.avatar_url || "/Images/favicon/UX.png";
+  bannerPhoto.src = profile.banner_url || "/Images/Profile/Banner/DarkRed_eyes.png";
+  userIcon.src = profile.avatar_url || "/Images/favicon/UX.png";
+
+  // Also fill inputs in modal for editing
   usernameInput.value = profile.username || "";
   ageInput.value = profile.age || "";
   rolesInput.value = profile.roles ? profile.roles.join(", ") : "";
-
-  profileImg.src = profile.avatar_url || "/Images/favicon/UX.png";
-  bannerImg.src = profile.banner_url || "/Images/Profile/Banner/DarkRed_eyes.png";
-
-  // Also update top-right avatar
-  userIcon.src = profile.avatar_url || "/Images/favicon/UX.png";
 }
 
-// Save Handlers
-saveUsername.addEventListener("click", async () => {
-  const { data: { session } } = await supabase.auth.getSession();
-  await supabase.from("profiles").upsert({ id: session.user.id, username: usernameInput.value });
+// Show modal on Edit Profile click
+editProfileBtn.addEventListener("click", () => {
+  modal.style.display = "flex";
 });
 
-saveAge.addEventListener("click", async () => {
-  const { data: { session } } = await supabase.auth.getSession();
-  await supabase.from("profiles").upsert({ id: session.user.id, age: parseInt(ageInput.value) });
+// Cancel button closes modal without saving
+cancelProfileBtn.addEventListener("click", () => {
+  modal.style.display = "none";
 });
 
-saveRoles.addEventListener("click", async () => {
+// Save changes on Save button click
+saveProfileBtn.addEventListener("click", async () => {
   const { data: { session } } = await supabase.auth.getSession();
-  const rolesArray = rolesInput.value.split(",").map(r => r.trim());
-  await supabase.from("profiles").upsert({ id: session.user.id, roles: rolesArray });
+  if (!session) {
+    alert("You must be signed in to save profile.");
+    return;
+  }
+
+  const userId = session.user.id;
+
+  // Upload images if selected
+  let avatarUrl = profilePhoto.src;
+  let bannerUrl = bannerPhoto.src;
+
+  if (avatarUpload.files.length > 0) {
+    const uploadedAvatarUrl = await uploadImage(avatarUpload.files[0], "avatars");
+    if (uploadedAvatarUrl) avatarUrl = uploadedAvatarUrl;
+  }
+
+  if (bannerUpload.files.length > 0) {
+    const uploadedBannerUrl = await uploadImage(bannerUpload.files[0], "banners");
+    if (uploadedBannerUrl) bannerUrl = uploadedBannerUrl;
+  }
+
+  // Prepare roles array
+  const rolesArray = rolesInput.value.split(",").map(r => r.trim()).filter(r => r.length > 0);
+
+  // Upsert profile data
+  const { error } = await supabase.from("profiles").upsert({
+    id: userId,
+    username: usernameInput.value,
+    age: parseInt(ageInput.value),
+    roles: rolesArray,
+    avatar_url: avatarUrl,
+    banner_url: bannerUrl
+  });
+
+  if (error) {
+    alert("Error saving profile: " + error.message);
+    return;
+  }
+
+  // Update UI immediately
+  usernameBtn.textContent = usernameInput.value;
+  ageBtn.textContent = ageInput.value;
+  rolesBtn.textContent = rolesArray.join(", ");
+  profilePhoto.src = avatarUrl;
+  bannerPhoto.src = bannerUrl;
+  userIcon.src = avatarUrl;
+
+  // Reset file inputs
+  avatarUpload.value = "";
+  bannerUpload.value = "";
+
+  // Close modal
+  modal.style.display = "none";
 });
 
-// Avatar Upload
-avatarUpload.addEventListener("change", async (e) => {
-  const file = e.target.files[0];
-  const publicUrl = await uploadImage(file, "avatars");
-  const { data: { session } } = await supabase.auth.getSession();
-  await supabase.from("profiles").upsert({ id: session.user.id, avatar_url: publicUrl });
-  profileImg.src = publicUrl;
-  userIcon.src = publicUrl;
-});
-
-// Banner Upload
-bannerUpload.addEventListener("change", async (e) => {
-  const file = e.target.files[0];
-  const publicUrl = await uploadImage(file, "banners");
-  const { data: { session } } = await supabase.auth.getSession();
-  await supabase.from("profiles").upsert({ id: session.user.id, banner_url: publicUrl });
-  bannerImg.src = publicUrl;
-});
-
-// Load on page open
-loadProfile();
-
-
-
+// On page load check auth and set UI accordingly
+window.onload = updateAuthUI;
 
 
