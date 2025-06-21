@@ -1,32 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="../Images/favicon/UX.png" type="image/x-icon" />
-  <link rel="stylesheet" href="../styles/profile_styles.css" />
-
-  <meta name="google-adsense-account" content="ca-pub-4751774215473177" />
-
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4751774215473177" crossorigin="anonymous"></script>
-
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link rel="icon" href="../Images/favicon/UX.png"/>
+  <link rel="stylesheet" href="../styles/profile_styles.css"/>
   <title>Profile</title>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("userMenu");
-      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-    }
-  </script>
 </head>
 <body>
   <h1>Unitel-Codex</h1>
-
   <nav class="navbar">
     <div class="nav-left">
-      <img src="/Images/favicon/UX.png" alt="Site Logo" class="site-logo" />
+      <img src="/Images/favicon/UX.png" class="site-logo" alt="Logo"/>
     </div>
-
     <div class="nav-center">
       <a href="../"><button>Home</button></a>
       <a href="../Python/python.html"><button>Python</button></a>
@@ -35,15 +21,13 @@
       <a href="../Archives/archives.html"><button>Archives</button></a>
       <a href="../About/about.html"><button>About</button></a>
     </div>
-
     <div class="nav-right">
-      <input type="text" placeholder="Search..." class="search-bar" />
-      <img src="/Images/favicon/UX.png" alt="User Icon" class="user-icon" onclick="toggleMenu()" />
-
+      <input type="text" placeholder="Search..." class="search-bar"/>
+      <img src="/Images/favicon/UX.png" class="user-icon" onclick="toggleMenu()" alt="User Icon"/>
       <div class="user-menu" id="userMenu">
         <a href="/User-Menu/profile.html" id="profileLink">Profile</a>
         <a href="#" id="signInBtn">Sign In</a>
-        <a href="#" id="logOutBtn" style="display:none;">Log Out</a> <!-- hide logout initially -->
+        <a href="#" id="logOutBtn" style="display:none">Log Out</a>
       </div>
     </div>
   </nav>
@@ -53,81 +37,48 @@
   </div>
 
   <div class="Banner_img">
-    <img src="/Images/Profile/Banner/DarkRed_eyes.png" id="bannerPhoto" />
+    <img src="/Images/Profile/Banner/DarkRed_eyes.png" id="bannerPhoto" alt="Banner"/>
   </div>
 
   <div class="profile_container">
-    <img class="profile_photo" src="/Images/favicon/UX.png" alt="Profile Photo" id="profilePhoto" />
-
+    <img src="/Images/favicon/UX.png" id="profilePhoto" class="profile_photo" alt="Avatar"/>
     <ul>
-      <li>Username: <button id="usernameBtn">John Wick</button></li>
-      <li>Age: <button id="ageBtn">47</button></li>
-      <li>Role: <button id="rolesBtn">Admin</button></li>
-      <!-- Disable edit button initially -->
+      <li>Username: <button id="usernameBtn">Guest</button></li>
+      <li>Age: <button id="ageBtn">-</button></li>
+      <li>Role: <button id="rolesBtn">-</button></li>
       <li>Edit Profile: <button id="editProfileBtn" disabled>Edit</button></li>
     </ul>
   </div>
 
-  <!-- Edit Profile Modal -->
-  <div id="editProfileModal" class="modal-overlay" style="display: none;">
+  <!-- Profile Edit Modal -->
+  <div id="editProfileModal" class="modal-overlay" style="display:none">
     <div class="modal-content">
       <h2>Edit Profile</h2>
-
-      <label for="usernameInput">Username:</label><br />
-      <input type="text" id="usernameInput" placeholder="Enter username" /><br />
-
-      <label for="ageInput">Age:</label><br />
-      <input type="number" id="ageInput" placeholder="Enter age" min="1" /><br />
-
-      <label for="rolesInput">Roles (comma separated):</label><br />
-      <input type="text" id="rolesInput" placeholder="e.g. Admin, User" /><br />
-
-      <label for="avatarUpload">Profile Avatar:</label><br />
-      <input type="file" id="avatarUpload" accept="image/*" /><br />
-
-      <label for="bannerUpload">Banner Image:</label><br />
-      <input type="file" id="bannerUpload" accept="image/*" /><br />
-
+      <label>Username:</label><input type="text" id="usernameInput" placeholder="Username"/>
+      <label>Age:</label><input type="number" id="ageInput" min="1" placeholder="Age"/>
+      <label>Roles:</label><input type="text" id="rolesInput" placeholder="Admin, User"/>
+      <label>Avatar:</label><input type="file" id="avatarUpload" accept="image/*"/>
+      <label>Banner:</label><input type="file" id="bannerUpload" accept="image/*"/>
       <button id="saveProfileBtn">Save</button>
       <button id="cancelProfileBtn">Cancel</button>
     </div>
   </div>
 
-  <hr />
-
-  <input type="radio" id="account_setting_tab" name="tab_group" checked />
-  <label for="account_setting_tab">Account Setting</label>
-
-  <input type="radio" id="site_setting_tab" name="tab_group" />
-  <label for="site_setting_tab">Site Setting</label>
-
-  <section id="account_setting_section">
-    <button>Test</button>
-  </section>
-
-  <section id="site_setting_section">
-    <button>Test 2</button>
-  </section>
-
   <!-- Auth Modal -->
-  <div id="authModal" class="modal-overlay" style="display: none;">
+  <div id="authModal" class="modal-overlay" style="display:none">
     <div class="modal-content">
-      <h2>Welcome to Unitel-Codex</h2>
-      <input type="email" id="authEmail" placeholder="Email" />
-      <input type="password" id="authPassword" placeholder="Password" />
-
-      <div style="margin-top: 10px;">
+      <h2>Welcome</h2>
+      <input type="email" id="authEmail" placeholder="Email"/>
+      <input type="password" id="authPassword" placeholder="Password"/>
+      <div>
         <button id="loginButton">Log In</button>
         <button id="registerButton">Register</button>
-        <button id="closeAuthModal" style="float: right;">Close</button>
+        <button id="closeAuthModal">Close</button>
       </div>
-
-      <p id="authFeedback" style="margin-top: 10px;"></p>
+      <p id="authFeedback"></p>
     </div>
   </div>
 
-  <script type="module" src="../js/Profile_js/profile2.js"></script>
-    <!-- <script type="module" src="../js/Profile_js/profile.js"></script> -->
-
+  <script type="module" src="../js/Profile_js/profile.js"></script>
 </body>
 </html>
