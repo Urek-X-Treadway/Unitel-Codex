@@ -22,12 +22,12 @@
       <a href="../About/about.html"><button>About</button></a>
     </div>
     <div class="nav-right">
-      <input type="text" placeholder="Search..." class="search-bar"/>
-      <img src="/Images/favicon/UX.png" class="user-icon" onclick="toggleMenu()" alt="User Icon"/>
-      <div class="user-menu" id="userMenu">
+      <input type="text" placeholder="Search..." class="search-bar" autocomplete="off" />
+      <img src="/Images/favicon/UX.png" alt="User Icon" class="user-icon" id="userIcon" style="cursor:pointer;" />
+      <div class="user-menu" id="userMenu" style="display:none;">
         <a href="/User-Menu/profile.html" id="profileLink">Profile</a>
         <a href="#" id="signInBtn">Sign In</a>
-        <a href="#" id="logOutBtn" style="display:none">Log Out</a>
+        <a href="#" id="logOutBtn" style="display:none;">Log Out</a>
       </div>
     </div>
   </nav>
@@ -79,6 +79,58 @@
     </div>
   </div>
 
+  <!-- Inline script for menu toggling and modal control -->
+  <script>
+    const userIcon = document.getElementById("userIcon");
+    const userMenu = document.getElementById("userMenu");
+    const signInBtn = document.getElementById("signInBtn");
+    const logOutBtn = document.getElementById("logOutBtn");
+    const authModal = document.getElementById("authModal");
+    const closeAuthModal = document.getElementById("closeAuthModal");
+    const editProfileBtn = document.getElementById("editProfileBtn");
+    const editProfileModal = document.getElementById("editProfileModal");
+    const cancelProfileBtn = document.getElementById("cancelProfileBtn");
+
+    // Toggle user menu on icon click
+    userIcon.addEventListener("click", e => {
+      e.stopPropagation();
+      userMenu.style.display = userMenu.style.display === "flex" ? "none" : "flex";
+      userMenu.style.flexDirection = "column";
+    });
+
+    // Close user menu if clicked outside
+    document.addEventListener("click", () => {
+      userMenu.style.display = "none";
+    });
+
+    userMenu.addEventListener("click", e => e.stopPropagation());
+
+    // Open auth modal on Sign In click
+    signInBtn.addEventListener("click", e => {
+      e.preventDefault();
+      authModal.style.display = "flex";
+      userMenu.style.display = "none";
+    });
+
+    // Close auth modal
+    closeAuthModal.addEventListener("click", () => {
+      authModal.style.display = "none";
+    });
+
+    // Edit button opens edit profile modal
+    editProfileBtn.addEventListener("click", () => {
+      editProfileModal.style.display = "flex";
+    });
+
+    // Cancel edit profile modal
+    cancelProfileBtn.addEventListener("click", () => {
+      editProfileModal.style.display = "none";
+    });
+
+    // You should handle logout, login, register, profile loading & saving in profile.js
+  </script>
+
+  <!-- Your main JS (Supabase, profile logic) -->
   <script type="module" src="../js/Profile_js/profile.js"></script>
 </body>
 </html>
