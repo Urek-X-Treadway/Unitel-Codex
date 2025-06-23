@@ -1,10 +1,24 @@
 body{
     background-color: #121212;
-    color: #69b6e2;
+    color: darkgrey;
     text-align: center;
     font-family: 'Junicode','Times New Roman', Times, serif;
     height: 1500px;
 
+
+}
+
+body h1:hover, 
+h2:hover, 
+h3:hover, 
+p:hover, 
+li:hover, 
+img:hover{
+    color: #69b6e2;
+    text-align: center;
+    font-family: 'Junicode','Times New Roman', Times, serif;
+    box-shadow: 0 0 25px 0;
+    /* This style here allow you to focus on what you are reading */
 
 }
 
@@ -154,11 +168,13 @@ body{
     margin: auto;
     
     background: #1f282e;
-    box-shadow: rgba(105, 182, 226, .5) 0 10px 32px 0;
+    box-shadow: 0 0 20px 0 #69c8ffbb;
     cursor: pointer;
     transition: all .1s ease-in-out 0s;
     border: 2px solid #1f282e;
     font-size: 0.5rem;
+
+    border-radius: 10px;
 
 }
 
