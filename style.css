@@ -1,8 +1,22 @@
 body{
     background-color: #121212;
+    color: darkgray;
+    text-align: center;
+    font-family: 'Junicode','Times New Roman', Times, serif;
+
+}
+
+body h1:hover, 
+h2:hover, 
+h3:hover, 
+p:hover, 
+li:hover, 
+img:hover{
     color: darkgoldenrod;
     text-align: center;
     font-family: 'Junicode','Times New Roman', Times, serif;
+    box-shadow: 0 0 25px 0;
+    /* This style here allow you to focus on what you are reading */
 
 }
 
