@@ -214,10 +214,30 @@ img:hover{
 
 /*##################################*/
 
+/*############ cat animation #################*/
+
+#cat_animation {
+    /* background-color: darkgray; */
+    margin: auto;
+    width: 150px;
+}
+
+
+/*##################################*/
 
 
 
+/*############ print = click on it and then it print welcome #################*/
 
+#print_func {
+    color: #2f81f7;
+}
+
+#print_func span:hover {
+    color: #f72f2f;
+}
+
+/*##################################*/
 
 
 
