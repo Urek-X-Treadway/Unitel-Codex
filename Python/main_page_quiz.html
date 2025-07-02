@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Python Quiz</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    h1, h2 {
+      color: #69b6e2;
+    }
+    .question {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+    }
+    label {
+      display: block;
+      margin: 0.5rem 0;
+    }
+    button {
+      background-color: #69b6e2;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      color: #121212;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      color: #69ff94;
+    }
+    .drag-item, .drop-box {
+      padding: 0.5rem;
+      margin: 0.5rem;
+      background-color: #333;
+      border: 2px dashed #69b6e2;
+      border-radius: 8px;
+      display: inline-block;
+      min-width: 120px;
+      text-align: center;
+      cursor: grab;
+    }
+    .drop-box {
+      background-color: #1a1a1a;
+    }
+  </style>
+</head>
+<body>
+
+    <a href="../"><h1>Home</h1></a>
+
+  <h1>Python Quiz</h1>
+
+  <form id="quizForm">
+
+    <!-- Multiple Choice -->
+    <div class="question">
+      <h2>1. What is the correct keyword to define a function in Python?</h2>
+      <label><input type="radio" name="q1" value="def"> def</label>
+      <label><input type="radio" name="q1" value="function"> function</label>
+      <label><input type="radio" name="q1" value="define"> define</label>
+    </div>
+
+    <!-- True/False -->
+    <div class="question">
+      <h2>2. Python is a compiled language. (True or False)</h2>
+      <label><input type="radio" name="q2" value="false"> False</label>
+      <label><input type="radio" name="q2" value="true"> True</label>
+    </div>
+
+    <!-- Match the Pair (Drag and Drop) -->
+    <div class="question">
+      <h2>3. Match the data types with their examples</h2>
+      <div style="display:flex; flex-wrap:wrap;">
+        <div class="drag-item" draggable="true" id="drag1">"Hello"</div>
+        <div class="drag-item" draggable="true" id="drag2">42</div>
+        <div class="drag-item" draggable="true" id="drag3">[1,2,3]</div>
+      </div>
+      <div style="display:flex; flex-wrap:wrap;">
+        <div class="drop-box" data-answer="string">String</div>
+        <div class="drop-box" data-answer="int">Integer</div>
+        <div class="drop-box" data-answer="list">List</div>
+      </div>
+      <input type="hidden" name="q3" id="q3">
+    </div>
+
+    <!-- Connect the correct concept (Simulated as dropdowns) -->
+    <div class="question">
+      <h2>4. Match each Python concept to its description</h2>
+      <label>
+        Loop:
+        <select name="q4_loop">
+          <option value="">--Select--</option>
+          <option value="repeats">Repeats code</option>
+          <option value="stores_data">Stores data</option>
+          <option value="defines_func">Defines a function</option>
+        </select>
+      </label>
+      <label>
+        Variable:
+        <select name="q4_var">
+          <option value="">--Select--</option>
+          <option value="repeats">Repeats code</option>
+          <option value="stores_data">Stores data</option>
+          <option value="defines_func">Defines a function</option>
+        </select>
+      </label>
+    </div>
+
+    <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+  </form>
+
+  <div class="result" id="result"></div>
+
+  <script>
+    // Drag-and-drop logic
+    let draggedItem = null;
+    document.querySelectorAll('.drag-item').forEach(item => {
+      item.addEventListener('dragstart', () => {
+        draggedItem = item;
+      });
+    });
+    document.querySelectorAll('.drop-box').forEach(box => {
+      box.addEventListener('dragover', (e) => e.preventDefault());
+      box.addEventListener('drop', () => {
+        if (draggedItem) {
+          box.textContent = draggedItem.textContent;
+          draggedItem.style.visibility = "hidden";
+        }
+      });
+    });
+
+    function submitQuiz() {
+      let score = 0;
+
+      // Q1
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      if (q1 && q1.value === "def") score++;
+
+      // Q2
+      const q2 = document.querySelector('input[name="q2"]:checked');
+      if (q2 && q2.value === "false") score++;
+
+      // Q3 - Drag/Drop simulated match
+      const dropBoxes = document.querySelectorAll('.drop-box');
+      let matches = {
+        "String": "\"Hello\"",
+        "Integer": "42",
+        "List": "[1,2,3]"
+      };
+      let correctMatches = 0;
+      dropBoxes.forEach(box => {
+        const type = box.getAttribute("data-answer");
+        const value = box.textContent.trim();
+        if (
+          (type === "string" && value === "\"Hello\"") ||
+          (type === "int" && value === "42") ||
+          (type === "list" && value === "[1,2,3]")
+        ) {
+          correctMatches++;
+        }
+      });
+      if (correctMatches === 3) score++;
+
+      // Q4 - Dropdowns
+      const q4_loop = document.querySelector('select[name="q4_loop"]').value;
+      const q4_var = document.querySelector('select[name="q4_var"]').value;
+      if (q4_loop === "repeats") score++;
+      if (q4_var === "stores_data") score++;
+
+      document.getElementById("result").innerText = `Your Score: ${score}/5`;
+    }
+  </script>
+
+</body>
+</html>
