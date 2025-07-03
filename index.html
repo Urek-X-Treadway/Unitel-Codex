@@ -37,650 +37,821 @@
     <body>
 
         <nav>
-            <h1>Unitel-Codex</h1>
+          <h1>Unitel-Codex</h1>
         </nav>
-
-
+        
+        
         <nav class="navbar">
-            <div class="nav-left">
-                <img src="Images/favicon/UX.png" alt="Site Logo" class="site-logo">
+          <div class="nav-left">
+            <img src="Images/favicon/UX.png" alt="Site Logo" class="site-logo">
+          </div>
+        
+          <div class="nav-center">
+            <a href="../"><button id="selected_button">Home</button></a>
+            <a href="/Python/python.html"><button>Python</button></a>
+            <a href="Web-Dev/web_dev.html"><button>Web Dev</button></a>
+            <a href="Linux/linux.html"><button>Linux</button></a>
+            <a href="Archives/archives.html"><button>Archives</button></a>
+            <a href="About/about.html"><button>About</button></a>
+        
+          </div>
+        
+          <div class="nav-right">
+            <input type="text" placeholder="Search..." class="search-bar">
+            <img src="/Images/favicon/UX.png" alt="User Icon" class="user-icon" onclick="toggleMenu()">
+        
+            <div class="user-menu" id="userMenu">
+              <a href="/User-Menu/profile.html" id="profileLink">Profile</a>
+              <a href="#" id="signInBtn">Sign In</a>
+              <a href="#" id="logOutBtn">Log Out</a>
             </div>
-
-            <div class="nav-center">
-                <a href="../"><button id="selected_button">Home</button></a>
-                <a href="/Python/python.html"><button>Python</button></a>
-                <a href="Web-Dev/web_dev.html"><button>Web Dev</button></a>
-                <a href="Linux/linux.html"><button>Linux</button></a>
-                <a href="Archives/archives.html"><button>Archives</button></a>
-                <a href="About/about.html"><button>About</button></a>
-
-            </div>
-
-            <div class="nav-right">
-                <input type="text" placeholder="Search..." class="search-bar">
-                <img src="/Images/favicon/UX.png" alt="User Icon" class="user-icon" onclick="toggleMenu()">
-
-                <div class="user-menu" id="userMenu">
-                    <a href="/User-Menu/profile.html" id="profileLink">Profile</a>
-                    <a href="#" id="signInBtn">Sign In</a>
-                    <a href="#" id="logOutBtn">Log Out</a>
-                </div>
-            </div>
+          </div>
         </nav>
-
-
-
         
-            <p>Welcome to the codex library - I'm Treadway</p>
-            <p>This website main goal is to help learn Python, Web Dev and Linux</p>
-            
-            <p>Being able to use python, html, css, javascript and linux, is more than enough to allow you to do what ever you want.</p>
-            
         
-
-
-          
-            <!-- Hidden radio buttons -->
-            <input type="radio" id="python_tab" name="tab_group" checked>
-            <label for="python_tab">Python</label>
-
-            <input type="radio" id="webdev_tab" name="tab_group">
-            <label for="webdev_tab">Web Dev</label>
-
-            <input type="radio" id="linux_tab" name="tab_group">
-            <label for="linux_tab">Linux</label>
-
-            <!-- Sections -->
-
-            <section id="python_section">
-
-                <main>
-    <div id="div1">
-        <h2>What is</h2>
-        <img src="/Images/Home-Tabs/Python-Tab/Python-Logo-700x394.png" alt="Python Logo">
-    </div>
-
-    <p>
-        Python is a high-level, interpreted programming language celebrated for its simplicity and clean syntax.
-        It's widely used across various fields, including web development, data science, automation, artificial intelligence, and more.
-    </p>
-
-    <div id="div2">
-        <h2>Who Created Python?</h2>
-
-        <img id="pop_right_img" src="/Images/Home-Tabs/Python-Tab/guido-headshot-2019.jpg" alt="Guido van Rossum">
-
-        <div class="right_popup">
-            <p><span>Name:</span> Guido van Rossum</p>
-            <p><span>Birthdate:</span> January 31, 1956 (Age: 69)</p>
-            <p><span>Nationality:</span> Dutch</p>
-            <p><span>Occupation:</span> Software Developer</p>
-        </div>
-    </div>
-
-    <p>
-        Python was developed by Guido van Rossum, a Dutch programmer, who aimed to create a language that was easy to read, easy to learn, and powerful enough for professionals.
-    </p>
-
-    <h2>When Was Python Created?</h2>
-    <p>Python was first released in 1991 and has grown into one of the most popular programming languages in the world.</p>
-
-    <h2>Why Was It Created?</h2>
-    <p>
-        Guido van Rossum designed Python to be a more approachable alternative to complex languages like C or Java. His goal was to make programming accessible, readable, and even enjoyable for everyone—from beginners to experts.
-    </p>
-
-    <h2>What Can You Do with Python?</h2>
-    <p>Python’s versatility makes it suitable for a wide range of applications:</p>
-
-    <ul>
-        <li>Web development (e.g., Django, Flask)</li>
-        <li>Data analysis & visualization (e.g., Pandas, Matplotlib)</li>
-        <li>Machine learning & AI (e.g., TensorFlow, Scikit-learn)</li>
-        <li>Scripting & automation (e.g., automating repetitive tasks)</li>
-        <li>Game development (e.g., Pygame)</li>
-        <li>Desktop GUI apps</li>
-        <li>Cybersecurity & networking tools</li>
-        <li>IoT (Internet of Things) projects</li>
-    </ul>
-
-    <h2>Is Python Popular?</h2>
-    <p>
-        Absolutely. Python consistently ranks among the top 3 programming languages globally and is used by leading companies like Google, Netflix, and Instagram.
-    </p>
-
-    <h2>Should You Learn It?</h2>
-    <p>Yes—especially if you are new to programming. Python is:</p>
-
-    <ul>
-        <li>Easy to read and beginner-friendly</li>
-        <li>In high demand across industries</li>
-        <li>Used in real-world, cutting-edge applications</li>
-        <li>A solid foundation before moving on to more complex languages</li>
-    </ul>
-</main>
-
-<div class="ad_bar">
-    <hr id="python_hr">
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4751774215473177"
-        crossorigin="anonymous"></script>
-    <!-- TheeAd -->
-    <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-4751774215473177"
-        data-ad-slot="1073400710"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-
-    <hr>
-</div>
-
-<!-- <h1>Python Tutorial</h1>
-<p>This comprehensive Python tutorial will help you master Python from the ground up.</p>
-
-<h2>Why This Tutorial?</h2>
-<p>
-    Whether you're a beginner or want to strengthen your skills, this guide offers a structured path
-    to learn Python with real-world examples and practical applications.
-</p>
-
-<h3>What You’ll Learn:</h3>
-<ul>
-    <li>Core Python programming concepts</li>
-    <li>How to build real-world Python applications</li>
-    <li>Apply Python in Data Science, Machine Learning, AI, and more</li>
-</ul>
-
-<h2>Getting Started with Python Programming</h2>
-<p>
-    This section walks you through setting up Python on your system and writing your first lines of code.
-    By the end, you'll have a solid starting point for further exploration.
-</p>
-
-<h2>Python Basics</h2>
-<p>
-    If you're new to coding, this section is for you. You'll learn the fundamentals of Python—variables,
-    control structures, data types, and functions—through easy-to-follow tutorials.
-</p>
-
-<h2>Python OOP</h2>
-<p>
-    Learn Object-Oriented Programming in Python to structure your code more efficiently using classes,
-    objects, inheritance, and more.
-</p>
-
-<h2>Advanced Python</h2>
-<p>
-    Deepen your knowledge with advanced concepts like decorators, generators, file handling, and Pythonic coding techniques.
-</p>
-
-<h2>Python Concurrency</h2>
-<p>
-    Explore Python’s concurrency models including multithreading, multiprocessing, and asyncio to write faster, scalable programs.
-</p>
-
-<h2>Python Regex</h2>
-<p>
-    Learn regular expressions step-by-step and understand how to manipulate text data using powerful search patterns.
-</p>
-
-<h2>Tkinter Tutorial</h2>
-<p>
-    Build desktop GUI applications from scratch using Tkinter with a focus on real-world layout and design.
-</p>
-
-<h2>Python Unit Testing</h2>
-<p>
-    Master the unittest module to write clean, testable code and ensure your programs run reliably.
-</p>
-
-<h2>Python NumPy</h2>
-<p>
-    Learn how to work with arrays, matrices, and numerical data using NumPy—an essential library for data science and machine learning.
-</p>
-
-<h2>PyQt Tutorial</h2>
-<p>
-    Create beautiful and powerful GUI applications using PyQt6, with hands-on examples and clean design techniques.
-</p>
-
-<h2>Django Tutorial</h2>
-<p>
-    Discover how to build full-stack web applications using the Django framework—covering models, views, templates, and databases.
-
-</p> -->
-
-
-
-
-
-
-
-
-
-<!-- === Python Quick Facts === -->
-<section class="new_content">
-  <h2>Did You Know?</h2>
-  <ul>
-    <li>Python was named after the British comedy series “Monty Python’s Flying Circus,” not the snake!</li>
-    <li>NASA uses Python for tasks like data processing and scripting mission control tools.</li>
-    <li>Python supports multiple programming paradigms: procedural, object-oriented, and functional.</li>
-    <li>There are over 350,000 Python packages available via PyPI (Python Package Index).</li>
-  </ul>
-</section>
-
-<!-- === Python vs Other Languages === -->
-<section class="new_content">
-  <h2>Python vs Other Languages</h2>
-  <table border="1" style="width: 100%; text-align: center;">
-    <tr>
-      <th>Feature</th>
-      <th>Python</th>
-      <th>Java</th>
-      <th>C++</th>
-      <th>JavaScript</th>
-    </tr>
-    <tr>
-      <td>Ease of Learning</td>
-      <td>⭐⭐⭐⭐⭐</td>
-      <td>⭐⭐⭐</td>
-      <td>⭐⭐</td>
-      <td>⭐⭐⭐</td>
-    </tr>
-    <tr>
-      <td>Use Cases</td>
-      <td>AI, Web, Data</td>
-      <td>Enterprise Apps</td>
-      <td>Systems/Performance</td>
-      <td>Web, Apps</td>
-    </tr>
-    <tr>
-      <td>Syntax Simplicity</td>
-      <td>⭐⭐⭐⭐⭐</td>
-      <td>⭐⭐</td>
-      <td>⭐</td>
-      <td>⭐⭐⭐</td>
-    </tr>
-  </table>
-</section>
-
-<!-- === Timeline Widget === -->
-<section class="new_content">
-  <h2>Timeline: Key Moments in Python's History</h2>
-  <ul>
-    <li><strong>1989:</strong> Python's development begins during Guido’s Christmas break.</li>
-    <li><strong>1991:</strong> Python 0.9.0 is released with basic features like classes, exceptions, and functions.</li>
-    <li><strong>2008:</strong> Python 3.0 is released — not backward compatible but future-focused.</li>
-    <li><strong>2020:</strong> Guido retires from Python leadership; Python reaches peak popularity.</li>
-    <li><strong>Today:</strong> Used by Google, NASA, Netflix, and millions of developers worldwide.</li>
-  </ul>
-</section>
-
-<!-- === Python Use Case Cards === -->
-<section class="new_content">
-  <h2>Explore What You Can Build With Python</h2>
-  <div class="use-case-cards">
-    <div class="card"><h4>Build a Blog</h4><p>Use Flask or Django to build a personal blog with user accounts and comment systems.</p></div>
-    <div class="card"><h4>Automate Boring Tasks</h4><p>Write Python scripts to rename files, scrape websites, or send emails.</p></div>
-    <div class="card"><h4>Create a Game</h4><p>Use Pygame to develop a fun 2D game from scratch.</p></div>
-    <div class="card"><h4>Data Dashboard</h4><p>Use Dash or Streamlit to visualize data with charts and filters.</p></div>
-  </div>
-</section>
-
-<!-- === Real Code Snippet === -->
-<section class="new_content">
-
-
-  <h2>Example Code: Hello, Python!</h2>
-
-  <p>This simple function shows how clean and readable Python syntax is—even for beginners.</p>
-
-
-
-  <div class="container"
-        data-default-python="print(&quot;sudo apt install python3&quot;)"
-        data-default-bash="sudo apt install python3">
-
-  <div class="code-header">
-    <span class="fileName">script.sh</span>
-    <div class="code-actions">
-      <select class="languageSelect" aria-label="Select programming language">
-        <option value="python">Python</option>            
-        <!-- <option value="bash" selected>Bash</option> -->
-      </select>
-      <button class="copyBtn" aria-label="Copy code to clipboard">Copy</button>
-      <span class="copyMessage" style="display:none;">Copied!</span>
-      <button class="editBtn" aria-label="Edit code">Edit</button>
-      <button class="saveBtn" aria-label="Save code" style="display:none;">Save</button>
-      <button class="cancelBtn" aria-label="Cancel edit" style="display:none;">Cancel</button>
-    </div>
-  </div>
-
-  <div class="codeWrapper" tabindex="0">
-    <pre class="line-numbers"><code class="language-bash codeBlock">print('Hello World!')</code></pre>
-  </div>
-
-  <script src="/Python/Code_Editor/editor.js"></script>
-
-
-
-
-</section>
-
-
-
-<!-- === Quiz Preview Widget === -->
-<section class="new_content">
-  <h2>Try a Python Quiz</h2>
-  <p>Test your knowledge with a few quick questions:</p>
-  <ul>
-    <li>✅ What keyword is used to define a function in Python?</li>
-    <li>✅ What symbol is used to comment a line?</li>
-    <li>✅ Which data type stores multiple values in an ordered collection?</li>
-  </ul>
-  <a href="/Python/main_page_quiz.html"><button>Take the Full Quiz</button></a>
-</section>
-
-<!-- === Inspiring Quotes === -->
-<section class="new_content">
-  <h2>What Others Say About Python</h2>
-  <blockquote>
-    "Python is fast enough for our site and allows us to produce maintainable features in record times." — <strong>Instagram Engineering</strong>
-  </blockquote>
-  <blockquote>
-    "Python’s simple syntax is especially suited for desktop, web, and scripting applications." — <strong>Google Developers</strong>
-  </blockquote>
-</section>
-
-<!-- === Mini Projects for Beginners === -->
-<section class="new_content">
-  <h2>Mini Project Ideas for Beginners</h2>
-  <ul>
-    <li>📅 A to-do list app using Tkinter</li>
-    <li>📰 A news scraper using BeautifulSoup</li>
-    <li>📊 A simple weather app using an API</li>
-    <li>🔐 A password generator with user input</li>
-  </ul>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-<a href="/Python/python.html"><button id="python_redirect_btn">Start Learning Python</button></a>
-
-
-
-
-
-            
-
-            </section>
-
-            <!------------------------------------------------------------------------>
-            <!------------------------------------------------------------------------>
-
-            <section id="webdev_section">
-
-                <h2>🌐 What is Web Development?</h2>
-
-                <p>Web Development is the process of creating websites and web applications — 
-                    the things you use every day like YouTube, Facebook, Amazon, or even small personal blogs.</p>
-                
-                <p>There are two major parts:</p>
-
-
-
-                <h2>🔹 1. Frontend (Client-side)</h2>
-
-                <p>This is what users see and interact with in their web browser — <button>buttons</button>, text, <span style="color: rgb(146, 130, 255);">colors</span>, layouts, forms, images, etc.</p>
-
-                <h3>The main technologies used in frontend:</h3>
-
-                <h2>✅ HTML (HyperText Markup Language)</h2>
-
-                <ul>
-                    <li>Made by: Tim Berners-Lee</li>
-                    <li>First released: 1991</li>
-                    <li>Why: To share and structure documents on the internet</li>
-                    <li>What it does: Creates the structure and content of a webpage</li>
-                    <li>Example: Headings, paragraphs, links, images</li>
-                    
-                    <li>
-                        <fieldset>
-                            <legend>html</legend>
-                            <pre><code>&lt;<span style="color: #3b98e4;">h1</span>&gt;Welcome to My Site&lt;<span style="color: #3b98e4;">/h1</span>&gt;
-&lt;<span style="color: #3b98e4;">p</span>&gt;This is a paragraph.&lt;<span style="color: #3b98e4;">/p</span>&gt;
-</code></pre>
-
-                        </fieldset>
-                    </li>
-
-                </ul>
-
-                <h2>✅ CSS (Cascading Style Sheets)</h2>
-
-                <ul>
-                    <li>Created by: Håkon Wium Lie</li>
-                    <li>First proposed: 1994</li>
-                    <li>Why: To separate design (style) from content (HTML)</li>
-                    <li>What it does: Controls the look and layout of the webpage</li>
-                    <li>Example: Fonts, colors, spacing, responsiveness</li>
-                    
-                    <li>
-                        <fieldset>
-                            <legend>css</legend>
-                            <pre><code>
-    <span style="color: #eeb90c;">h1 {</span>
-                    <span style="color: #3b98e4;">color: blue;
-                             font-family: Arial;</span>
-<span style="color: #eeb90c;">}</span>
-</code></pre>
-
-
-                        </fieldset>
-                    </li>
-
-                </ul>
-
-
-
-
-
-```css
-h1 {
-  color: blue;
-  font-family: Arial;
-}
-```
-
----
-
-### ✅ **JavaScript**
-
-* **Created by**: Brendan Eich
-* **First released**: 1995
-* **Why**: To add interactivity to web pages
-* **What it does**: Adds **dynamic behavior** — like dropdowns, popups, form validation, games
-
-```javascript
-alert("Welcome to my site!");
-```
-
----
-
-## 🔹 2. Backend (Server-side)
-
-This is **what runs behind the scenes**. Backend handles **data**, **logic**, **security**, and **communication with the database**. It's what makes things like logging in, saving comments, or online shopping work.
-
-### Common backend languages and technologies:
-
----
-
-### ✅ **Python** (with frameworks like Django, Flask)
-
-* **Made by**: Guido van Rossum
-* **First released**: 1991
-* **Why**: To make coding simple and fun
-* **Used for**: Powerful server-side logic, data analysis, automation
-
----
-
-### ✅ **PHP**
-
-* **Created by**: Rasmus Lerdorf
-* **First released**: 1995
-* **Why**: To create dynamic, database-driven websites
-* **Used for**: WordPress, Facebook (early days)
-
----
-
-### ✅ **Node.js** (JavaScript on the backend)
-
-* **Created by**: Ryan Dahl
-* **First released**: 2009
-* **Why**: To run JavaScript on servers for fast and scalable applications
-* **Used for**: Real-time apps (chat, games), APIs
-
----
-
-### ✅ **Databases** (To store data)
-
-* **SQL (MySQL, PostgreSQL)** – For structured data
-* **NoSQL (MongoDB)** – For flexible, document-based data
-
----
-
-## 🛠️ What Can You Build with Web Development?
-
-* Personal or business websites
-* Blogs and portfolios
-* Online stores (e-commerce)
-* Social media platforms
-* Web-based games
-* Dashboards and admin panels
-* Chat apps and video call tools
-* APIs and backend services
-* Full software-as-a-service (SaaS) applications
-
----
-
-## 📈 Is Web Development Popular?
-
-Yes! It’s **one of the most in-demand skills in tech**. Every business needs a website. Every app you use runs on web tech in some form (including mobile apps using web backends or web views).
-
-According to multiple surveys, **JavaScript, HTML/CSS, and Python** are some of the **most used languages** in the world.
-
----
-
-## 🎯 Should You Learn Web Development?
-
-**Definitely yes**, if you want to:
-
-* Make your own websites
-* Work as a freelancer or full-time developer
-* Create your own online business or startup
-* Transition into tech (even without a degree)
-* Understand how the web and the internet work
-
----
-
-## 🧭 Quick Summary
-
-| Area         | Tech Used                       | Role                    |
-| ------------ | ------------------------------- | ----------------------- |
-| **Frontend** | HTML, CSS, JavaScript           | What the user sees      |
-| **Backend**  | Python, PHP, Node.js, databases | What powers the website |
-
----
-
-Would you like a **step-by-step roadmap** for learning frontend and backend, with what to learn first and what projects to try?
-
-
-
-                <button id="python_redirect_btn"><a href="/Python/python.html">Start Learning Python</a></button>
-
-
-
-            </section>
-
-            <!------------------------------------------------------------------------>
-            <!------------------------------------------------------------------------>
-
-
-            <section id="linux_section">
-
-                <h2>Linux Section</h2>
-
-                <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    xxxxxxxxxxxxxxxxxxxxxx</p>
-
-            </section>
-
-            
-
-
-
-
-
-    </body>
-
-
-    <footer>
-
-
-        &copy; 2025 Python Codex. All rights reserved. 
-  <a href="/privacy-policy.html" style="color:#69b6e2; text-decoration:none;">Privacy Policy</a>
-
-        <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-client="ca-pub-4751774215473177"
-                data-ad-slot="6068330267"
-                data-ad-format="auto"
-                data-full-width-responsive="true">
-            </ins>
-
+        
+        
+        <p>Welcome to the codex library - I'm Treadway</p>
+        <p>This website main goal is to help learn Python, Web Dev and Linux</p>
+        
+        <p>Being able to use python, html, css, javascript and linux, is more than enough to allow you to do what ever you want.
+        </p>
+        
+        
+        
+        
+        
+        <!-- Hidden radio buttons -->
+        <input type="radio" id="python_tab" name="tab_group" checked>
+        <label for="python_tab">Python</label>
+        
+        <input type="radio" id="webdev_tab" name="tab_group">
+        <label for="webdev_tab">Web Dev</label>
+        
+        <input type="radio" id="linux_tab" name="tab_group">
+        <label for="linux_tab">Linux</label>
+        
+        <!-- Sections -->
+        
+        <section id="python_section">
+        
+          <main>
+            <div id="div1">
+              <h2>What is</h2>
+              <img src="/Images/Home-Tabs/Python-Tab/Python-Logo-700x394.png" alt="Python Logo">
+            </div>
+        
+            <p>
+              Python is a high-level, interpreted programming language celebrated for its simplicity and clean syntax.
+              It's widely used across various fields, including web development, data science, automation, artificial
+              intelligence, and more.
+            </p>
+        
+            <div id="div2">
+              <h2>Who Created Python?</h2>
+        
+              <img id="pop_right_img" src="/Images/Home-Tabs/Python-Tab/guido-headshot-2019.jpg" alt="Guido van Rossum">
+        
+              <div class="right_popup">
+                <p><span>Name:</span> Guido van Rossum</p>
+                <p><span>Birthdate:</span> January 31, 1956 (Age: 69)</p>
+                <p><span>Nationality:</span> Dutch</p>
+                <p><span>Occupation:</span> Software Developer</p>
+              </div>
+            </div>
+        
+            <p>
+              Python was developed by Guido van Rossum, a Dutch programmer, who aimed to create a language that was easy to
+              read, easy to learn, and powerful enough for professionals.
+            </p>
+        
+            <h2>When Was Python Created?</h2>
+            <p>Python was first released in 1991 and has grown into one of the most popular programming languages in the world.
+            </p>
+        
+            <h2>Why Was It Created?</h2>
+            <p>
+              Guido van Rossum designed Python to be a more approachable alternative to complex languages like C or Java. His
+              goal was to make programming accessible, readable, and even enjoyable for everyone—from beginners to experts.
+            </p>
+        
+            <h2>What Can You Do with Python?</h2>
+            <p>Python’s versatility makes it suitable for a wide range of applications:</p>
+        
+            <ul>
+              <li>Web development (e.g., Django, Flask)</li>
+              <li>Data analysis & visualization (e.g., Pandas, Matplotlib)</li>
+              <li>Machine learning & AI (e.g., TensorFlow, Scikit-learn)</li>
+              <li>Scripting & automation (e.g., automating repetitive tasks)</li>
+              <li>Game development (e.g., Pygame)</li>
+              <li>Desktop GUI apps</li>
+              <li>Cybersecurity & networking tools</li>
+              <li>IoT (Internet of Things) projects</li>
+            </ul>
+        
+            <h2>Is Python Popular?</h2>
+            <p>
+              Absolutely. Python consistently ranks among the top 3 programming languages globally and is used by leading
+              companies like Google, Netflix, and Instagram.
+            </p>
+        
+            <h2>Should You Learn It?</h2>
+            <p>Yes—especially if you are new to programming. Python is:</p>
+        
+            <ul>
+              <li>Easy to read and beginner-friendly</li>
+              <li>In high demand across industries</li>
+              <li>Used in real-world, cutting-edge applications</li>
+              <li>A solid foundation before moving on to more complex languages</li>
+            </ul>
+          </main>
+        
+          <div class="ad_bar">
+            <hr id="python_hr">
+        
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4751774215473177"
+              crossorigin="anonymous"></script>
+            <!-- TheeAd -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4751774215473177" data-ad-slot="1073400710"
+              data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
+              (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
-
-
-    </footer>
+        
+            <hr>
+          </div>
+        
+          <!-- <h1>Python Tutorial</h1>
+        <p>This comprehensive Python tutorial will help you master Python from the ground up.</p>
+        
+        <h2>Why This Tutorial?</h2>
+        <p>
+            Whether you're a beginner or want to strengthen your skills, this guide offers a structured path
+            to learn Python with real-world examples and practical applications.
+        </p>
+        
+        <h3>What You’ll Learn:</h3>
+        <ul>
+            <li>Core Python programming concepts</li>
+            <li>How to build real-world Python applications</li>
+            <li>Apply Python in Data Science, Machine Learning, AI, and more</li>
+        </ul>
+        
+        <h2>Getting Started with Python Programming</h2>
+        <p>
+            This section walks you through setting up Python on your system and writing your first lines of code.
+            By the end, you'll have a solid starting point for further exploration.
+        </p>
+        
+        <h2>Python Basics</h2>
+        <p>
+            If you're new to coding, this section is for you. You'll learn the fundamentals of Python—variables,
+            control structures, data types, and functions—through easy-to-follow tutorials.
+        </p>
+        
+        <h2>Python OOP</h2>
+        <p>
+            Learn Object-Oriented Programming in Python to structure your code more efficiently using classes,
+            objects, inheritance, and more.
+        </p>
+        
+        <h2>Advanced Python</h2>
+        <p>
+            Deepen your knowledge with advanced concepts like decorators, generators, file handling, and Pythonic coding techniques.
+        </p>
+        
+        <h2>Python Concurrency</h2>
+        <p>
+            Explore Python’s concurrency models including multithreading, multiprocessing, and asyncio to write faster, scalable programs.
+        </p>
+        
+        <h2>Python Regex</h2>
+        <p>
+            Learn regular expressions step-by-step and understand how to manipulate text data using powerful search patterns.
+        </p>
+        
+        <h2>Tkinter Tutorial</h2>
+        <p>
+            Build desktop GUI applications from scratch using Tkinter with a focus on real-world layout and design.
+        </p>
+        
+        <h2>Python Unit Testing</h2>
+        <p>
+            Master the unittest module to write clean, testable code and ensure your programs run reliably.
+        </p>
+        
+        <h2>Python NumPy</h2>
+        <p>
+            Learn how to work with arrays, matrices, and numerical data using NumPy—an essential library for data science and machine learning.
+        </p>
+        
+        <h2>PyQt Tutorial</h2>
+        <p>
+            Create beautiful and powerful GUI applications using PyQt6, with hands-on examples and clean design techniques.
+        </p>
+        
+        <h2>Django Tutorial</h2>
+        <p>
+            Discover how to build full-stack web applications using the Django framework—covering models, views, templates, and databases.
+        
+        </p> -->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <!-- === Python Quick Facts === -->
+          <section class="new_content">
+            <h2>Did You Know?</h2>
+            <ul>
+              <li>Python was named after the British comedy series “Monty Python’s Flying Circus,” not the snake!</li>
+              <li>NASA uses Python for tasks like data processing and scripting mission control tools.</li>
+              <li>Python supports multiple programming paradigms: procedural, object-oriented, and functional.</li>
+              <li>There are over 350,000 Python packages available via PyPI (Python Package Index).</li>
+            </ul>
+          </section>
+        
+          <!-- === Python vs Other Languages === -->
+          <section class="new_content">
+            <h2>Python vs Other Languages</h2>
+            <table border="1" style="width: 100%; text-align: center;">
+              <tr>
+                <th>Feature</th>
+                <th>Python</th>
+                <th>Java</th>
+                <th>C++</th>
+                <th>JavaScript</th>
+              </tr>
+              <tr>
+                <td>Ease of Learning</td>
+                <td>⭐⭐⭐⭐⭐</td>
+                <td>⭐⭐⭐</td>
+                <td>⭐⭐</td>
+                <td>⭐⭐⭐</td>
+              </tr>
+              <tr>
+                <td>Use Cases</td>
+                <td>AI, Web, Data</td>
+                <td>Enterprise Apps</td>
+                <td>Systems/Performance</td>
+                <td>Web, Apps</td>
+              </tr>
+              <tr>
+                <td>Syntax Simplicity</td>
+                <td>⭐⭐⭐⭐⭐</td>
+                <td>⭐⭐</td>
+                <td>⭐</td>
+                <td>⭐⭐⭐</td>
+              </tr>
+            </table>
+          </section>
+        
+          <!-- === Timeline Widget === -->
+          <section class="new_content">
+            <h2>Timeline: Key Moments in Python's History</h2>
+            <ul>
+              <li><strong>1989:</strong> Python's development begins during Guido’s Christmas break.</li>
+              <li><strong>1991:</strong> Python 0.9.0 is released with basic features like classes, exceptions, and functions.
+              </li>
+              <li><strong>2008:</strong> Python 3.0 is released — not backward compatible but future-focused.</li>
+              <li><strong>2020:</strong> Guido retires from Python leadership; Python reaches peak popularity.</li>
+              <li><strong>Today:</strong> Used by Google, NASA, Netflix, and millions of developers worldwide.</li>
+            </ul>
+          </section>
+        
+          <!-- === Python Use Case Cards === -->
+          <section class="new_content">
+            <h2>Explore What You Can Build With Python</h2>
+            <div class="use-case-cards">
+              <div class="card">
+                <h4>Build a Blog</h4>
+                <p>Use Flask or Django to build a personal blog with user accounts and comment systems.</p>
+              </div>
+              <div class="card">
+                <h4>Automate Boring Tasks</h4>
+                <p>Write Python scripts to rename files, scrape websites, or send emails.</p>
+              </div>
+              <div class="card">
+                <h4>Create a Game</h4>
+                <p>Use Pygame to develop a fun 2D game from scratch.</p>
+              </div>
+              <div class="card">
+                <h4>Data Dashboard</h4>
+                <p>Use Dash or Streamlit to visualize data with charts and filters.</p>
+              </div>
+            </div>
+          </section>
+        
+          <!-- === Real Code Snippet === -->
+          <section class="new_content">
+        
+        
+            <h2>Example Code: Hello, Python!</h2>
+        
+            <p>This simple function shows how clean and readable Python syntax is—even for beginners.</p>
+        
+        
+        
+            <div class="container" data-default-python="print(&quot;sudo apt install python3&quot;)"
+              data-default-bash="sudo apt install python3">
+        
+              <div class="code-header">
+                <span class="fileName">script.sh</span>
+                <div class="code-actions">
+                  <select class="languageSelect" aria-label="Select programming language">
+                    <option value="python">Python</option>
+                    <!-- <option value="bash" selected>Bash</option> -->
+                  </select>
+                  <button class="copyBtn" aria-label="Copy code to clipboard">Copy</button>
+                  <span class="copyMessage" style="display:none;">Copied!</span>
+                  <button class="editBtn" aria-label="Edit code">Edit</button>
+                  <button class="saveBtn" aria-label="Save code" style="display:none;">Save</button>
+                  <button class="cancelBtn" aria-label="Cancel edit" style="display:none;">Cancel</button>
+                </div>
+              </div>
+        
+              <div class="codeWrapper" tabindex="0">
+                <pre class="line-numbers"><code class="language-bash codeBlock">print('Hello World!')</code></pre>
+              </div>
+        
+              <script src="/Python/Code_Editor/editor.js"></script>
+        
+        
+        
+        
+          </section>
+        
+        
+        
+          <!-- === Quiz Preview Widget === -->
+          <section class="new_content">
+            <h2>Try a Python Quiz</h2>
+            <p>Test your knowledge with a few quick questions:</p>
+            <ul>
+              <li>✅ What keyword is used to define a function in Python?</li>
+              <li>✅ What symbol is used to comment a line?</li>
+              <li>✅ Which data type stores multiple values in an ordered collection?</li>
+            </ul>
+            <a href="/Python/main_page_quiz.html"><button>Take the Full Quiz</button></a>
+          </section>
+        
+          <!-- === Inspiring Quotes === -->
+          <section class="new_content">
+            <h2>What Others Say About Python</h2>
+            <blockquote>
+              "Python is fast enough for our site and allows us to produce maintainable features in record times." —
+              <strong>Instagram Engineering</strong>
+            </blockquote>
+            <blockquote>
+              "Python’s simple syntax is especially suited for desktop, web, and scripting applications." — <strong>Google
+                Developers</strong>
+            </blockquote>
+          </section>
+        
+          <!-- === Mini Projects for Beginners === -->
+          <section class="new_content">
+            <h2>Mini Project Ideas for Beginners</h2>
+            <ul>
+              <li>📅 A to-do list app using Tkinter</li>
+              <li>📰 A news scraper using BeautifulSoup</li>
+              <li>📊 A simple weather app using an API</li>
+              <li>🔐 A password generator with user input</li>
+            </ul>
+          </section>
+        
+        
+        
+        
+        
+        
+          <a href="/Python/python.html"><button id="python_redirect_btn">Start Learning Python</button></a>
+        
+        
+        
+        
+        
+        
+        
+        </section>
+        
+        <!----------------------------------------------------------------------------------------------------------->
+        <!----------------------------------------------------------------------------------------------------------->
+        
+        <section id="webdev_section">
+        
+          <!-- 🌐 What is Web Development? -->
+          <h2>🌐 What is Web Development?</h2>
+        
+          <p>
+            Web Development is the process of building websites and web applications — the tools and platforms you use every day
+            like
+            <strong>YouTube</strong>, <strong>Facebook</strong>, <strong>Amazon</strong>, or even small personal blogs.
+          </p>
+        
+          <p>There are two major areas of web development:</p>
+        
+          <!-- 🔹 Frontend -->
+          <h2>🔹 1. Frontend (Client-side)</h2>
+          <p>
+            This is everything the user sees and interacts with in their browser — <button disabled>buttons</button>,
+            <span style="color: rgb(146, 130, 255);">colors</span>, text, forms, images, and layout.
+          </p>
+        
+          <h3>Main Technologies Used in Frontend:</h3>
+        
+          <!-- ✅ HTML -->
+          <h2>✅ HTML (HyperText Markup Language)</h2>
+          <ul>
+            <li>👤 Made by: Tim Berners-Lee</li>
+            <li>📅 First Released: 1991</li>
+            <li>🎯 Purpose: To structure and share documents on the web</li>
+            <li>🔧 Use: Provides structure/content of web pages</li>
+            <li>🧪 Examples: Headings, paragraphs, links, images</li>
+          </ul>
+          <fieldset>
+            <legend>HTML Example</legend>
+            <pre><code>&lt;h1&gt;Welcome to My Site&lt;/h1&gt;
+                    &lt;p&gt;This is a paragraph.&lt;/p&gt;</code></pre>
+          </fieldset>
+        
+          <!-- ✅ CSS -->
+          <h2>✅ CSS (Cascading Style Sheets)</h2>
+          <ul>
+            <li>👤 Created by: Håkon Wium Lie</li>
+            <li>📅 First Proposed: 1994</li>
+            <li>🎯 Purpose: Separate design from content</li>
+            <li>🔧 Use: Styles the webpage (colors, spacing, layout)</li>
+            <li>🧪 Examples: Fonts, colors, spacing, responsiveness</li>
+          </ul>
+          <fieldset>
+            <legend>CSS Example</legend>
+            <pre><code>h1 {
+                      color: blue;
+                      font-family: Arial;
+                    }</code></pre>
+          </fieldset>
+        
+          <!-- ✅ JavaScript -->
+          <h2>✅ JavaScript</h2>
+          <ul>
+            <li>👤 Created by: Brendan Eich</li>
+            <li>📅 First Released: 1995</li>
+            <li>🎯 Purpose: Add interactivity to web pages</li>
+            <li>🔧 Use: Enables dynamic behavior (dropdowns, popups, games)</li>
+          </ul>
+          <fieldset>
+            <legend>JavaScript Example</legend>
+            <pre><code>alert("Welcome to my site!");</code></pre>
+          </fieldset>
+        
+          <!-- 💡 Extra Widget: Mini Quiz -->
+          <div class="mini-quiz" style="margin:1rem 0; padding:1rem; background:#1e1e1e; border-radius:8px;">
+            <strong>Quick Quiz:</strong><br>
+            <p>Which language controls how a website looks?</p>
+            <ul>
+              <li>✅ A) CSS</li>
+              <li>☐ B) HTML</li>
+              <li>☐ C) Python</li>
+            </ul>
+          </div>
+        
+          <!-- 🔹 Backend -->
+          <h2>🔹 2. Backend (Server-side)</h2>
+          <p>
+            The backend is everything that runs behind the scenes — logic, databases, and servers. It powers features like
+            logging in, saving comments, or processing payments.
+          </p>
+        
+          <h3>Common Backend Technologies:</h3>
+        
+          <!-- ✅ Python -->
+          <h2>✅ Python (Django, Flask)</h2>
+          <ul>
+            <li>👤 Made by: Guido van Rossum</li>
+            <li>📅 First Released: 1991</li>
+            <li>🎯 Purpose: Make coding fun and readable</li>
+            <li>🔧 Use: APIs, business logic, automation</li>
+          </ul>
+        
+          <!-- ✅ PHP -->
+          <h2>✅ PHP</h2>
+          <ul>
+            <li>👤 Created by: Rasmus Lerdorf</li>
+            <li>📅 First Released: 1995</li>
+            <li>🎯 Purpose: Create dynamic web content</li>
+            <li>🔧 Use: Still powers WordPress and legacy web systems</li>
+          </ul>
+        
+          <!-- ✅ Node.js -->
+          <h2>✅ Node.js (JavaScript on the backend)</h2>
+          <ul>
+            <li>👤 Created by: Ryan Dahl</li>
+            <li>📅 First Released: 2009</li>
+            <li>🎯 Purpose: Run JS server-side</li>
+            <li>🔧 Use: Real-time apps, games, chat, APIs</li>
+          </ul>
+        
+          <!-- ✅ Databases -->
+          <h2>✅ Databases</h2>
+          <ul>
+            <li>📦 SQL (MySQL, PostgreSQL) — for structured, relational data</li>
+            <li>📦 NoSQL (MongoDB) — for flexible, document-style data</li>
+          </ul>
+        
+          <!-- 🧱 Timeline Widget -->
+          <h2>📜 Timeline of Web Tech</h2>
+          <ul>
+            <li><strong>1991:</strong> HTML launched</li>
+            <li><strong>1994:</strong> CSS proposed</li>
+            <li><strong>1995:</strong> JavaScript created</li>
+            <li><strong>2004+:</strong> Modern frameworks (React, Angular) emerge</li>
+            <li><strong>Today:</strong> Web apps run like full desktop software</li>
+          </ul>
+        
+          <!-- 🛠️ What Can You Build? -->
+          <h2>🛠️ What Can You Build with Web Development?</h2>
+          <ul>
+            <li>🌐 Websites and blogs</li>
+            <li>🛒 E-commerce stores</li>
+            <li>📸 Portfolios and personal pages</li>
+            <li>📊 Dashboards and admin panels</li>
+            <li>💬 Chat and social media platforms</li>
+            <li>🧮 SaaS applications and business tools</li>
+            <li>🎮 Web-based games</li>
+          </ul>
+        
+          <!-- 📈 Popularity -->
+          <h2>📈 Is Web Development Popular?</h2>
+          <p>
+            Web Development is one of the most in-demand fields in tech. Every business and platform relies on websites or web
+            applications.
+            Technologies like HTML, CSS, JavaScript, and Python are among the top most-used programming languages today.
+          </p>
+        
+          <!-- 🎯 Should You Learn It? -->
+          <h2>🎯 Should You Learn Web Development?</h2>
+          <p>Absolutely. Especially if you want to:</p>
+          <ul>
+            <li>💻 Build your own websites</li>
+            <li>🎓 Start a tech career or side hustle</li>
+            <li>🚀 Launch your own online product</li>
+            <li>🌍 Learn how the web works from the ground up</li>
+          </ul>
+        
+          <!-- 🧭 Summary Table -->
+          <h2>🧭 Quick Summary</h2>
+          <table border="1" style="width:100%; text-align:center; background:#1e1e1e; border-collapse: collapse;">
+            <tr style="background-color: #2a2a2a;">
+              <th>Area</th>
+              <th>Technologies</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>Frontend</td>
+              <td>HTML, CSS, JavaScript</td>
+              <td>What the user sees and interacts with</td>
+            </tr>
+            <tr>
+              <td>Backend</td>
+              <td>Python, PHP, Node.js, Databases</td>
+              <td>Handles data, logic, and the server-side</td>
+            </tr>
+          </table>
+        
+          <!-- 📚 Bonus Widget -->
+          <div style="margin-top: 2rem; padding: 1rem; background: #202020; border-left: 5px solid #69b6e2;">
+            <strong>Bonus:</strong> Want a full <em>step-by-step roadmap</em> to learn frontend, backend, and real projects?
+            <a href="https://roadmap.sh/frontend?r=frontend-beginner" style="color:#69b6e2;">Click here for the roadmap →</a>
+          </div>
+        
+        
+        
+        
+        
+          <button id="python_redirect_btn"><a href="/Web-Dev/web_dev.html">Start Learning Web-Dev</a></button>
+        
+        
+        
+        </section>
+        
+        <!--------------------------------------------------------------------------------------------------->
+        <!--------------------------------------------------------------------------------------------------->
+        
+        
+        <section id="linux_section">
+                
+          <h2>🐧 What is Linux?</h2>
+          <p>
+            Linux is a powerful, open-source operating system used in servers, supercomputers, smartphones, smart TVs, and even
+            your Wi-Fi router.
+            It powers **most of the internet**, and is the go-to OS for developers, hackers, system admins, and tech pros.
+          </p>
+          <h3>✨ Why Linux is Awesome:</h3>
+          <ul>
+            <li>🆓 It's free and open-source</li>
+            <li>⚡ Super fast and lightweight</li>
+            <li>🛡️ Extremely secure and privacy-respecting</li>
+            <li>🛠️ Perfect for customization and scripting</li>
+            <li>🌐 Used on web servers, cloud, and embedded devices</li>
+          </ul>
+        
+          <hr>
+        
+          <h2>🕰️ History of Linux</h2>
+          <ul>
+            <li><strong>1991</strong> – Linus Torvalds creates Linux as a hobby OS</li>
+            <li><strong>1992</strong> – Linux goes fully open-source under GPL license</li>
+            <li><strong>1996</strong> – The penguin "Tux" becomes the official mascot</li>
+            <li><strong>2000s+</strong> – Linux becomes the backbone of the internet</li>
+            <li><strong>Today</strong> – Linux powers over 90% of cloud infrastructure</li>
+          </ul>
+        
+          <hr>
+        
+          <h2>🔹 What Can You Do with Linux?</h2>
+          <ul>
+            <li>💻 Run a super-secure personal OS (e.g. Ubuntu, Linux Mint)</li>
+            <li>🌐 Host a web server (Apache, NGINX)</li>
+            <li>🤖 Automate tasks with shell scripts</li>
+            <li>⚙️ Manage infrastructure using the command line</li>
+            <li>💾 Program in Python, C, Java, Bash, and more</li>
+            <li>📡 Run ethical hacking tools (Kali Linux)</li>
+            <li>📦 Create Docker containers</li>
+            <li>🚀 Deploy apps in the cloud (AWS, Azure, GCP)</li>
+          </ul>
+        
+          <hr>
+        
+          <h2>📂 Linux File Structure</h2>
+          <p>Linux follows a hierarchical file system:</p>
+          <table border="1" style="width:100%; background:#1e1e1e; color:white; border-collapse:collapse;">
+            <tr style="background-color:#2c2c2c;">
+              <th>Directory</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td><code>/</code></td>
+              <td>Root directory</td>
+            </tr>
+            <tr>
+              <td><code>/home</code></td>
+              <td>User files</td>
+            </tr>
+            <tr>
+              <td><code>/etc</code></td>
+              <td>System configs</td>
+            </tr>
+            <tr>
+              <td><code>/bin</code></td>
+              <td>Basic system binaries</td>
+            </tr>
+            <tr>
+              <td><code>/var</code></td>
+              <td>Logs and variable data</td>
+            </tr>
+            <tr>
+              <td><code>/opt</code></td>
+              <td>Optional packages</td>
+            </tr>
+          </table>
+        
+          <hr>
+        
+          <h2>💡 Common Linux Commands</h2>
+          <ul>
+            <li><code>ls</code> — List files and folders</li>
+            <li><code>cd</code> — Change directory</li>
+            <li><code>pwd</code> — Show current path</li>
+            <li><code>cp</code> — Copy files</li>
+            <li><code>mv</code> — Move/rename files</li>
+            <li><code>rm</code> — Delete files</li>
+            <li><code>sudo</code> — Run as root</li>
+            <li><code>nano</code> — Open text editor</li>
+            <li><code>chmod</code> — Change file permissions</li>
+          </ul>
+        
+          <fieldset>
+            <legend>Terminal Example</legend>
+            <pre><code>sudo apt update && sudo apt upgrade</code></pre>
+            <p><i>This updates all packages on Debian-based distros.</i></p>
+          </fieldset>
+        
+          <hr>
+        
+          <h2>📦 Popular Linux Distributions (Distros)</h2>
+          <ul>
+            <li><strong>Ubuntu:</strong> Beginner-friendly, great for desktops</li>
+            <li><strong>Debian:</strong> Stable and conservative</li>
+            <li><strong>Fedora:</strong> Cutting-edge features</li>
+            <li><strong>Arch:</strong> Minimal, user-controlled</li>
+            <li><strong>Kali Linux:</strong> For penetration testing and security</li>
+            <li><strong>Alpine:</strong> Lightweight, ideal for Docker</li>
+          </ul>
+        
+          <hr>
+        
+          <h2>🛠️ What Can You Build or Do?</h2>
+          <ul>
+            <li>🚀 Set up a home server or NAS</li>
+            <li>🌍 Host a personal website or blog</li>
+            <li>👨‍💻 Learn shell scripting and system automation</li>
+            <li>📡 Penetration testing (ethical hacking)</li>
+            <li>📦 Run containers and CI/CD pipelines</li>
+            <li>💬 Create chat apps using Linux servers</li>
+          </ul>
+        
+          <hr>
+        
+          <h2>📈 Why Learn Linux?</h2>
+          <ul>
+            <li>🖥️ It's the most used OS for developers and engineers</li>
+            <li>📡 Powers 90% of servers and cloud platforms</li>
+            <li>💼 Highly valuable for system admins, devs, and security pros</li>
+            <li>📱 Android is built on Linux</li>
+            <li>💸 Completely free and open-source</li>
+          </ul>
+        
+          <hr>
+        
+          <!-- 🧠 Mini Quiz Widget -->
+          <div class="mini-quiz" style="background:#1e1e1e; padding:1rem; border-left:5px solid #69b6e2;">
+            <strong>Quick Quiz:</strong><br>
+            <p>Which command updates your package list?</p>
+            <ul>
+              <li>✅ A) <code>sudo apt update</code></li>
+              <li>☐ B) <code>cd update</code></li>
+              <li>☐ C) <code>run upgrade</code></li>
+            </ul>
+          </div>
+        
+          <hr>
+        
+          <!-- 🧭 Summary Table -->
+          <h2>📊 Linux Summary</h2>
+          <table border="1" style="width:100%; background:#1e1e1e; color:white; border-collapse:collapse;">
+            <tr style="background-color:#2c2c2c;">
+              <th>Category</th>
+              <th>Details</th>
+            </tr>
+            <tr>
+              <td>OS Type</td>
+              <td>Unix-like</td>
+            </tr>
+            <tr>
+              <td>Kernel</td>
+              <td>Linux Kernel (Monolithic)</td>
+            </tr>
+            <tr>
+              <td>Use Cases</td>
+              <td>Servers, Desktops, Hacking, Cloud, IoT</td>
+            </tr>
+            <tr>
+              <td>Users</td>
+              <td>Developers, Sysadmins, Hackers, Students</td>
+            </tr>
+          </table>
+        
+          <!-- 📘 Start Learning Link -->
+          <div style="text-align:center; margin-top:2rem;">
+            <a href="/Linux/linux.html"><button
+                style="padding:0.8rem 1.5rem; font-size:1.1rem; background-color:#69b6e2; color:#121212; border:none; border-radius:10px;">Start
+                Learning Linux</button></a>
+          </div>
+        
+        
+        
+        
+        </section>
+        
+        
+        
+        
+        
+        
+        
+        </body>
+        
+        
+        <footer>
+        
+        
+          &copy; 2025 Python Codex. All rights reserved.
+          <a href="/privacy-policy.html" style="color:#69b6e2; text-decoration:none;">Privacy Policy</a>
+        
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4751774215473177" data-ad-slot="6068330267"
+            data-ad-format="auto" data-full-width-responsive="true">
+          </ins>
+        
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        
+        
+        </footer>
 
 
 
