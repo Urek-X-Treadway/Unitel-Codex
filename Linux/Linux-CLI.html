@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-[#121212] text-[#bde0fe]">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Linux Commands - Vertical Tabs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/f/f1/Icons8_flat_linux.svg" type="image/x-icon" />
+
+  <style>
+    /* Custom scrollbar for the right content */
+    main::-webkit-scrollbar {
+      width: 8px;
+    }
+    main::-webkit-scrollbar-thumb {
+      background-color: #69b6e2;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="h-full flex select-none">
+    
+  <!-- Left Tabs -->
+  <nav class="w-56 bg-white/5 backdrop-blur border-r border-white/10 flex flex-col">
+    <button class="px-6 py-4 text-left border-l-4 border-[#69b6e2] bg-white/10 font-semibold transition-colors" data-tab="file-management">
+      📁 File Management
+    </button>
+    <button class="px-6 py-4 text-left border-l-4 border-transparent hover:border-[#69b6e2] transition-colors" data-tab="system-info">
+      🔧 System Information
+    </button>
+    <button class="px-6 py-4 text-left border-l-4 border-transparent hover:border-[#69b6e2] transition-colors" data-tab="user-management">
+      👤 User Management
+    </button>
+    <button class="px-6 py-4 text-left border-l-4 border-transparent hover:border-[#69b6e2] transition-colors" data-tab="networking">
+      🌐 Networking
+    </button>
+    <button class="px-6 py-4 text-left border-l-4 border-transparent hover:border-[#69b6e2] transition-colors" data-tab="package-management">
+      📦 Package Management
+    </button>
+    <button class="px-6 py-4 text-left border-l-4 border-transparent hover:border-[#69b6e2] transition-colors" data-tab="processes">
+      🔄 Processes & Services
+    </button>
+    <button class="px-6 py-4 text-left border-l-4 border-transparent hover:border-[#69b6e2] transition-colors" data-tab="disk-filesystems">
+      🧪 Disk & Filesystems
+    </button>
+    <button class="px-6 py-4 text-left border-l-4 border-transparent hover:border-[#69b6e2] transition-colors"
+      data-tab="permissions">
+      🔐 Permissions
+    </button>
+    <button class="px-6 py-4 text-left border-l-4 border-transparent hover:border-[#69b6e2] transition-colors"
+      data-tab="search-filters">
+      🔍 Search & Filters
+    </button>
+    <button class="px-6 py-4 text-left border-l-4 border-transparent hover:border-[#69b6e2] transition-colors"
+      data-tab="bash-scripting">
+      🛠️ Bash & Scripting
+    </button>
+    </nav>
+    
+    <!-- Right Content -->
+    <main
+      class="flex-1 p-8 overflow-y-auto max-h-screen scrollbar-thin scrollbar-thumb-[#69b6e2]/80 scrollbar-track-transparent">
+
+
+      <a href="./linux.html"><button>Back</button></a>
+      <input id="searchInput" type="text" placeholder="Search commands..."
+        class="mb-6 px-4 py-2 rounded bg-white/10 text-[#bde0fe] placeholder-[#69b6e2] focus:outline-none focus:ring-2 focus:ring-[#69b6e2] transition w-full" />
+    
+      <!-- File Management -->
+      <section id="file-management" class="tab-content">
+        <h2 class="text-3xl font-bold mb-4">📁 File Management</h2>
+        <ul class="ml-4 mt-3 space-y-2">
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">ls</code> – List directory contents</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">cd</code> – Change directory</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">pwd</code> – Print current directory path</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">cp file1 file2</code> – Copy file1 to file2</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">mv old new</code> – Move or rename files</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">rm file</code> – Remove file</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">mkdir folder</code> – Create directory</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">rmdir folder</code> – Delete empty directory</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">touch file</code> – Create empty file</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">stat file</code> – Show file info (size, timestamps,
+              permissions)</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">basename path</code> – Get filename from path</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">dirname path</code> – Get directory name from path</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+        </ul>
+      </section>
+    
+    
+    
+      <!-- System Information -->
+      <section id="system-info" class="tab-content hidden">
+        <h2 class="text-3xl font-bold mb-4">🔧 System Information</h2>
+        <ul class="ml-4 mt-3 space-y-2">
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">uname -a</code> – Show complete system info (kernel,
+              architecture, hostname)</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">hostname</code> – Display current system hostname</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">uptime</code> – Show how long the system has been
+              running</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">top</code> – Display real-time CPU and memory
+              usage</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">htop</code> – Enhanced interactive process viewer (if
+              installed)</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">df -h</code> – Disk space usage (human-readable)</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">du -sh *</code> – Folder sizes in current
+              directory</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">free -m</code> – Show memory usage in MB</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">lscpu</code> – CPU architecture and info</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">lsblk</code> – List block devices (disks and
+              partitions)</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">dmesg</code> – Show system boot and hardware
+              messages</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+        </ul>
+      </section>
+    
+    
+      <!-- User Management -->
+      <section id="user-management" class="tab-content hidden">
+        <h2 class="text-3xl font-bold mb-4">👤 User Management</h2>
+        <ul class="ml-4 mt-3 space-y-2">
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">whoami</code> – Show current logged-in user</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">id</code> – Show UID, GID, and groups of user</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">users</code> – Show all users currently logged in</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">adduser username</code> – Add a new user</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">passwd username</code> – Set/change user password</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">usermod -aG group username</code> – Add user to
+              group</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">groups username</code> – Show groups a user belongs
+              to</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">deluser username</code> – Delete a user</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">who</code> – Show who is logged in and from where</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">su - username</code> – Switch to another user
+              account</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+        </ul>
+      </section>
+    
+    
+      <!-- Networking -->
+      <section id="networking" class="tab-content hidden">
+        <h2 class="text-3xl font-bold mb-4">🌐 Networking</h2>
+        <ul class="ml-4 mt-3 space-y-2">
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">ping google.com</code> – Check if host is
+              reachable</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">ip a</code> – Show IP addresses and interfaces</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">ifconfig</code> – Old tool for network interfaces (still
+              used)</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">netstat -tulnp</code> – List listening ports and
+              services</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">ss -tuln</code> – Faster replacement for netstat</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">curl ifconfig.me</code> – Get public IP address</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">traceroute domain.com</code> – Show route packets
+              take</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">dig example.com</code> – DNS lookup</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">nslookup example.com</code> – Query name servers</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">nmap 192.168.1.1</code> – Scan ports on a target
+              (requires install)</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+        </ul>
+      </section>
+    
+    
+      <!-- Package Management -->
+      <section id="package-management" class="tab-content hidden">
+        <h2 class="text-3xl font-bold mb-4">📦 Package Management (Debian/Ubuntu)</h2>
+        <ul class="ml-4 mt-3 space-y-2">
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">apt update</code> – Refresh package lists</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">apt upgrade</code> – Upgrade all installed
+              packages</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">apt install &lt;package&gt;</code> – Install a
+              package</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">apt remove &lt;package&gt;</code> – Remove a
+              package</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">apt search &lt;package&gt;</code> – Search for
+              packages</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">dpkg -i &lt;file.deb&gt;</code> – Install .deb package
+              file manually</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">apt autoremove</code> – Remove unused dependencies</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">apt clean</code> – Clear local repository of retrieved
+              package files</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+        </ul>
+      </section>
+    
+    
+      <!-- Processes & Services -->
+      <section id="processes" class="tab-content hidden">
+        <h2 class="text-3xl font-bold mb-4">🔄 Processes & Services</h2>
+        <ul class="ml-4 mt-3 space-y-2">
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">ps aux</code> – Show all running processes</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">top</code> – Interactive real-time process viewer</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">htop</code> – Enhanced process viewer (if
+              installed)</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">kill &lt;PID&gt;</code> – Terminate process by PID</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">killall &lt;process_name&gt;</code> – Terminate all
+              processes with name</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">systemctl status &lt;service&gt;</code> – Show service
+              status (systemd)</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">systemctl start &lt;service&gt;</code> – Start a
+              service</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">systemctl stop &lt;service&gt;</code> – Stop a
+              service</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">systemctl restart &lt;service&gt;</code> – Restart a
+              service</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">service &lt;service&gt; start|stop|restart</code> –
+              Control services (SysV init)</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+        </ul>
+      </section>
+    
+    
+      <!-- Disk & Filesystems -->
+      <section id="disk-filesystems" class="tab-content hidden">
+        <h2 class="text-3xl font-bold mb-4">🧪 Disk & Filesystems</h2>
+        <ul class="ml-4 mt-3 space-y-2">
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">df -h</code> – Show disk space usage in human-readable
+              format</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">du -sh &lt;directory&gt;</code> – Show total size of
+              directory</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">mount | umount</code> – Mount or unmount
+              filesystems</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">lsblk</code> – List block devices (disks and
+              partitions)</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">fdisk -l</code> – Show partition tables</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">blkid</code> – Show block device attributes like UUID and
+              type</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">tune2fs</code> – Adjust ext2/3/4 filesystem
+              parameters</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">fsck /dev/sdX</code> – Filesystem consistency check and
+              repair</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+    
+        </ul>
+      </section>
+    
+    
+      <!-- Permissions -->
+    
+      <section id="permissions" class="tab-content hidden">
+        <h2 class="text-3xl font-bold mb-4">🔐 Permissions & Ownership</h2>
+        <ul class="ml-4 mt-3 space-y-2">
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">chmod 755 file</code> – Set file permissions
+              (rwxr-xr-x)</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">chown user:group file</code> – Change owner and
+              group</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">ls -l file</code> – List file with permissions and
+              ownership</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">umask</code> – Show default permission mask for new
+              files</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">getfacl file</code> – Get extended ACL permissions</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">setfacl -m u:user:rwx file</code> – Set extended ACL
+              permissions</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+        </ul>
+      </section>
+    
+    
+      <!-- Search & Filters -->
+      <section id="search-filters" class="tab-content hidden">
+        <h2 class="text-3xl font-bold mb-4">🔍 Search & Filters</h2>
+        <ul class="ml-4 mt-3 space-y-2">
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">grep 'pattern' file</code> – Search text in files</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">find /path -name 'file'</code> – Find files by
+              name</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">locate file</code> – Quickly find file by name (updatedb
+              index)</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">awk '{print $1}' file</code> – Pattern scanning and
+              processing</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">sed 's/old/new/g' file</code> – Stream editor for text
+              substitution</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">cut -d',' -f1 file</code> – Extract columns from
+              file</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">sort file</code> – Sort lines alphabetically or
+              numerically</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">uniq file</code> – Filter duplicate lines</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+        </ul>
+      </section>
+    
+    
+      <!-- Bash & Scripting -->
+      <section id="bash-scripting" class="tab-content hidden">
+        <h2 class="text-3xl font-bold mb-4">🛠️ Bash & Scripting</h2>
+        <ul class="ml-4 mt-3 space-y-2">
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">echo "Hello World"</code> – Print text to terminal</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">#!/bin/bash</code> – Shebang to specify script
+              interpreter</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">chmod +x script.sh</code> – Make script executable</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">./script.sh</code> – Run executable script</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">if [ condition ]; then ... fi</code> – Basic if
+              statement</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">for i in {1..5}; do ... done</code> – For loop</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">while [ condition ]; do ... done</code> – While
+              loop</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">read variable</code> – Read input from user</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">$?</code> – Exit status of last command</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+          <li class="flex items-center justify-between gap-4 bg-white/5 rounded-lg px-4 py-2 hover:bg-white/10 transition">
+            <span><code class="font-bold text-[#69b6e2] copy-text">export VAR=value</code> – Set environment variable</span>
+            <button
+              class="copy-btn text-sm text-white bg-[#69b6e2]/30 hover:bg-[#69b6e2] px-3 py-1 rounded transition">Copy</button>
+          </li>
+        </ul>
+      </section>
+
+
+
+    
+  </main>
+
+  <script>
+    // Tabs switching script
+    const tabs = document.querySelectorAll('nav button');
+    const contents = document.querySelectorAll('.tab-content');
+
+    function activateTab(tab) {
+      tabs.forEach(t => {
+        t.classList.remove('bg-white/10', 'font-semibold', 'border-[#69b6e2]');
+        t.classList.add('border-transparent');
+      });
+      contents.forEach(c => c.classList.add('hidden'));
+
+      tab.classList.add('bg-white/10', 'font-semibold', 'border-[#69b6e2]');
+      tab.classList.remove('border-transparent');
+      const target = tab.getAttribute('data-tab');
+      document.getElementById(target).classList.remove('hidden');
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => activateTab(tab));
+    });
+
+    // Activate first tab on page load
+    activateTab(tabs[0]);
+  </script>
+
+
+
+<script>
+    const searchInput = document.getElementById('searchInput');
+
+searchInput.addEventListener('input', () => {
+  const filter = searchInput.value.toLowerCase().trim();
+  // Find currently visible tab content
+  const visibleSection = document.querySelector('.tab-content:not(.hidden)');
+  if (!visibleSection) return;
+
+  const items = visibleSection.querySelectorAll('ul > li');
+  items.forEach(item => {
+    const text = item.textContent.toLowerCase();
+    if (text.includes(filter)) {
+      item.style.display = '';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+});
+
+  </script>
+
+  <script>
+  document.addEventListener("click", function(e) {
+    if (e.target.classList.contains("copy-btn")) {
+      const text = e.target.closest("li").querySelector(".copy-text").textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        e.target.textContent = "Copied!";
+        setTimeout(() => (e.target.textContent = "Copy"), 1500);
+      });
+    }
+  });
+</script>
+
+
+</body>
+</html>
