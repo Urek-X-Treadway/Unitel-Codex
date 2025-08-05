@@ -214,18 +214,29 @@ img:hover{
 
 /*##################################*/
 
-/*############ cat animation #################*/
+/*############ intro on python homepage #################*/
 
-#cat_animation {
-    /* background-color: darkgray; */
-    margin: auto;
-    width: 150px;
+#introonpythonhomepage {
+    list-style: none;
+    text-align: left;
+
 }
 
+#introonpythonhomepage li {
+    text-align: center;
+}
 
 /*##################################*/
 
 
+/*############ intro on python homepage #################*/
+
+#window_python_ul_download {
+    list-style: none;
+}
+
+
+/*##################################*/
 
 /*############ print = click on it and then it print welcome #################*/
 

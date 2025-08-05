@@ -120,7 +120,8 @@ document.querySelectorAll('.container').forEach(container => {
       case 'html': return 'index.html';
       case 'java': return 'Main.java';
       case 'bash': return 'script.sh';
-      default: return 'script.txt';
+      case 'terminal': return 'Terminal';
+      default: return 'terminal';
     }
   }
 
